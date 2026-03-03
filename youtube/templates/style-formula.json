@@ -1,0 +1,25 @@
+{
+  "$schema": "youtube-template.v1.0",
+  "$dummy": true,
+
+  "series": "E",
+  "series_name": "스타일 공식",
+  "format": "해설 교육",
+  "duration_target": "3-5min",
+  "frequency": "주 1회",
+
+  "template": {
+    "title": "[스타일 공식] {{formula.name}} — {{product.name}}",
+    "description": "{{formula.description}}\n\n🛒 쿠팡: {{channels.coupang.url}}\n🛒 네이버: {{channels.naver.url}}\n🏠 쇼룸: {{channels.showroom.page}}\n\n#GOHSY #남성패션 #스타일공식 #{{style_module.context}}",
+    "tags": ["GOHSY", "남성패션", "스타일공식", "코디", "{{style_module.context}}"],
+    "thumbnail_template": "youtube/thumbnails/formula-thumb-template.png"
+  },
+
+  "content_structure": [
+    { "section": "hook", "duration": "0:00-0:15", "content": "오늘의 공식 한줄 소개" },
+    { "section": "problem", "duration": "0:15-0:45", "content": "이 스타일이 왜 어려운가" },
+    { "section": "formula", "duration": "0:45-2:30", "content": "V-F-C-D 변수 해설 + 시각화" },
+    { "section": "application", "duration": "2:30-4:00", "content": "실제 상품 적용 예시" },
+    { "section": "cta", "duration": "4:00-4:30", "content": "구매 링크 + 다음 공식 예고" }
+  ]
+}

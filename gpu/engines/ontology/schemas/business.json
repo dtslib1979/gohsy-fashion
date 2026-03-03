@@ -2,209 +2,99 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "@context": {
     "@vocab": "https://schema.org/",
-    "ds": "https://dongseon.kr/schema/"
+    "gohsy": "https://gohsy.com/schema/"
   },
-  "@type": "ds:BusinessSchema",
-  "version": "1.0.0",
-  "description": "비즈니스 엔티티 온톨로지 스키마",
+  "@type": "gohsy:FashionCommerceSchema",
+  "version": "3.0.0",
+  "description": "패션 커머스 도메인 온톨로지",
 
   "entities": {
-    "Business": {
-      "@type": "ds:Business",
-      "description": "비즈니스/사업체 엔티티",
+    "Product": {
+      "@type": "gohsy:Product",
+      "description": "상품 엔티티 (= PRODUCT_CARD)",
       "properties": {
-        "id": {
-          "type": "string",
-          "description": "고유 식별자"
-        },
-        "name": {
-          "type": "string",
-          "description": "사업체명"
-        },
-        "type": {
-          "type": "string",
-          "enum": ["small-business", "real-estate", "solo-entrepreneur", "other"],
-          "description": "업종 분류"
-        },
-        "industry": {
-          "type": "string",
-          "description": "세부 업종"
-        },
-        "description": {
-          "type": "string",
-          "description": "사업 설명"
-        },
-        "owner": {
-          "$ref": "#/entities/Person",
-          "description": "사업주"
-        },
-        "location": {
-          "$ref": "#/entities/Location",
-          "description": "위치"
-        },
-        "contact": {
-          "$ref": "#/entities/Contact",
-          "description": "연락처"
-        },
-        "brand": {
-          "$ref": "#/entities/Brand",
-          "description": "브랜드 정보"
-        },
-        "flow": {
-          "$ref": "#/entities/FlowDesign",
-          "description": "동선 설계"
-        },
-        "status": {
-          "type": "string",
-          "enum": ["prospect", "active", "completed", "paused"],
-          "description": "상태"
-        },
-        "createdAt": {
-          "type": "string",
-          "format": "date-time"
-        },
-        "updatedAt": {
-          "type": "string",
-          "format": "date-time"
-        }
-      },
-      "required": ["id", "name", "type"]
-    },
-
-    "Person": {
-      "@type": "ds:Person",
-      "description": "사람 엔티티",
-      "properties": {
-        "id": { "type": "string" },
+        "product_id": { "type": "string", "pattern": "^PROD-\\d{3}$" },
         "name": { "type": "string" },
-        "role": { "type": "string" },
-        "contact": { "$ref": "#/entities/Contact" }
+        "category": { "type": "string" },
+        "season": { "type": "string", "enum": ["SS2026", "FW2026", "ALL"] },
+        "price": { "$ref": "#/entities/Price" },
+        "spec": { "$ref": "#/entities/Spec" },
+        "style_module": { "$ref": "#/entities/StyleModule" },
+        "channels": { "$ref": "#/entities/ChannelStatus" },
+        "content_matrix": { "$ref": "#/entities/ContentMatrix" }
+      },
+      "required": ["product_id", "name", "category", "price"]
+    },
+
+    "Price": {
+      "@type": "gohsy:Price",
+      "properties": {
+        "cost": { "type": "number" },
+        "retail": { "type": "number" },
+        "coupang": { "type": "number" },
+        "naver": { "type": "number" },
+        "currency": { "type": "string", "default": "KRW" }
       }
     },
 
-    "Location": {
-      "@type": "ds:Location",
-      "description": "위치 엔티티",
+    "Spec": {
+      "@type": "gohsy:Spec",
       "properties": {
-        "address": { "type": "string" },
-        "city": { "type": "string" },
-        "region": { "type": "string" },
-        "postalCode": { "type": "string" },
-        "coordinates": {
+        "material": { "type": "string" },
+        "sizes": { "type": "array", "items": { "type": "string" } },
+        "colors": { "type": "array", "items": { "type": "string" } },
+        "weight": { "type": "string" },
+        "origin": { "type": "string" },
+        "care": { "type": "string" }
+      }
+    },
+
+    "StyleModule": {
+      "@type": "gohsy:StyleModule",
+      "description": "Style Master Engine V-F-C-D 모델",
+      "properties": {
+        "variables": {
           "type": "object",
           "properties": {
-            "lat": { "type": "number" },
-            "lng": { "type": "number" }
+            "silhouette_type": { "type": "string", "enum": ["Box", "A", "H", "Y", "O"] },
+            "upper_length_ratio": { "type": "number", "minimum": 0, "maximum": 1 },
+            "pant_width_category": { "type": "string", "enum": ["Skinny", "Straight", "Wide", "Flare"] },
+            "layer_depth": { "type": "integer", "minimum": 1, "maximum": 5 },
+            "contrast_index": { "type": "number", "minimum": 0, "maximum": 1 },
+            "formality_score": { "type": "number", "minimum": 0, "maximum": 1 },
+            "season": { "type": "string" }
           }
-        }
+        },
+        "formula_ids": { "type": "array", "items": { "type": "string" } },
+        "context": { "type": "string" },
+        "source_archive": { "type": ["string", "null"] }
       }
     },
 
-    "Contact": {
-      "@type": "ds:Contact",
-      "description": "연락처 엔티티",
+    "ChannelStatus": {
+      "@type": "gohsy:ChannelStatus",
       "properties": {
-        "phone": { "type": "string" },
-        "email": { "type": "string", "format": "email" },
-        "website": { "type": "string", "format": "uri" },
-        "social": {
-          "type": "object",
-          "properties": {
-            "instagram": { "type": "string" },
-            "youtube": { "type": "string" },
-            "naver": { "type": "string" },
-            "kakao": { "type": "string" }
-          }
-        }
+        "coupang": { "type": "object" },
+        "naver": { "type": "object" },
+        "youtube": { "type": "object" },
+        "showroom": { "type": "object" }
       }
     },
 
-    "Brand": {
-      "@type": "ds:Brand",
-      "description": "브랜드 엔티티",
+    "ContentMatrix": {
+      "@type": "gohsy:ContentMatrix",
       "properties": {
-        "narrative": {
-          "type": "string",
-          "description": "브랜드 서사"
-        },
-        "tagline": {
-          "type": "string",
-          "description": "태그라인"
-        },
-        "values": {
-          "type": "array",
-          "items": { "type": "string" },
-          "description": "핵심 가치"
-        },
-        "tone": {
-          "type": "string",
-          "description": "브랜드 톤"
-        },
-        "colors": {
-          "type": "object",
-          "properties": {
-            "primary": { "type": "string" },
-            "secondary": { "type": "string" },
-            "accent": { "type": "string" }
-          }
-        },
-        "logo": {
-          "type": "string",
-          "format": "uri"
-        }
-      }
-    },
-
-    "FlowDesign": {
-      "@type": "ds:FlowDesign",
-      "description": "동선 설계 엔티티",
-      "properties": {
-        "stages": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "properties": {
-              "id": { "type": "string", "enum": ["land", "explore", "act", "return"] },
-              "goal": { "type": "string" },
-              "design": { "type": "string" },
-              "components": { "type": "array", "items": { "type": "string" } },
-              "metrics": { "type": "object" }
-            }
-          }
-        },
-        "touchpoints": {
-          "type": "array",
-          "items": { "type": "string" },
-          "description": "고객 접점"
-        },
-        "conversionGoal": {
-          "type": "string",
-          "description": "전환 목표"
-        }
+        "real_model": { "type": "object" },
+        "webtoon": { "type": "object" },
+        "fantasy": { "type": "object" },
+        "cad": { "type": "object" }
       }
     }
   },
 
   "relationships": {
-    "owns": {
-      "description": "소유 관계",
-      "from": "Person",
-      "to": "Business"
-    },
-    "locatedAt": {
-      "description": "위치 관계",
-      "from": "Business",
-      "to": "Location"
-    },
-    "hasBrand": {
-      "description": "브랜드 관계",
-      "from": "Business",
-      "to": "Brand"
-    },
-    "hasFlow": {
-      "description": "동선 관계",
-      "from": "Business",
-      "to": "FlowDesign"
-    }
+    "belongsTo": { "from": "Product", "to": "Category" },
+    "styledBy": { "from": "Product", "to": "StyleModule" },
+    "soldOn": { "from": "Product", "to": "ChannelStatus" }
   }
 }

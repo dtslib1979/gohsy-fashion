@@ -27,7 +27,7 @@
   "product_video": {
     "description": "상품 소개 영상 자동 생성",
     "input": ["card.json", "images/*", "bgm.mp3"],
-    "engine": "gpu/render/ (기존 dongseon 엔진)",
+    "engine": "gpu/render/render-video.js",
     "output": "youtube/rendered/{product_id}.mp4",
     "spec": {
       "resolution": "1080x1920",

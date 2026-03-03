@@ -1,13 +1,13 @@
 # Flow Protocol Specification
 
-> Version: 1.0.0
-> DONGSEON Studio
+> Version: 3.0.0
+> GOHSY FASHION
 
 ---
 
 ## 1. 개요
 
-**Flow Protocol**은 DONGSEON Studio의 핵심 설계 방법론이다.
+**Flow Protocol**은 GOHSY FASHION의 핵심 설계 방법론이다.
 
 ### 원칙
 > 사람의 '다음 행동'을 설계한다.
@@ -210,7 +210,7 @@ RETURN: "콘텐츠 볼까?" → 블로그/영상/뉴스레터
 
 ### 관련 문서
 - `FACTORY.json` - 스튜디오 설정
-- `design/dongseon.css` - 디자인 시스템
+- `showroom/index.html` - 디자인 시스템
 - `engines/llm/prompts/designer.md` - 설계 프롬프트
 
 ### 버전 히스토리
@@ -220,4 +220,4 @@ RETURN: "콘텐츠 볼까?" → 블로그/영상/뉴스레터
 
 ---
 
-*DONGSEON Studio - Flow Protocol v1.0*
+*GOHSY FASHION - Flow Protocol v1.0*

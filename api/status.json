@@ -1,37 +1,30 @@
 {
   "status": "operational",
-  "studio": "DONGSEON",
-  "version": "1.0.0",
-  "timestamp": "2026-01-29T00:00:00Z",
+  "brand": "GOHSY FASHION",
+  "version": "3.0.0",
+  "timestamp": "2026-03-03T00:00:00Z",
   "services": {
-    "website": {
+    "showroom": {
       "status": "operational",
-      "url": "https://dtslib1979.github.io/dongseon-studio/"
+      "url": "https://dtslib1979.github.io/gohsy-fashion/showroom/"
     },
-    "console": {
+    "catalog": {
       "status": "operational",
-      "url": "https://dtslib1979.github.io/dongseon-studio/console/"
+      "products": 3
     },
-    "llmEngine": {
+    "gpu_renderer": {
       "status": "ready",
-      "note": "Configuration complete, awaiting first deployment"
+      "note": "detail-page HTML generation operational"
     },
-    "automationEngine": {
-      "status": "ready",
-      "note": "Scripts prepared"
-    },
-    "ontologyEngine": {
-      "status": "ready",
-      "note": "Schemas defined"
+    "channels": {
+      "coupang": { "status": "pending", "note": "vendor registration required" },
+      "naver": { "status": "pending", "note": "store registration required" },
+      "youtube": { "status": "pending", "note": "video pipeline scaffold ready" },
+      "showroom": { "status": "operational" }
     }
   },
-  "stats": {
-    "totalNodes": 0,
-    "activeNodes": 0,
-    "packagesAvailable": 3
-  },
   "contact": {
-    "github": "https://github.com/dtslib1979/dongseon-studio",
+    "github": "https://github.com/dtslib1979/gohsy-fashion",
     "hq": "dtslib-papyrus"
   }
 }

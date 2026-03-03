@@ -20,7 +20,7 @@
     "channels": ["coupang", "naver", "youtube", "showroom"],
     "contentTypes": ["real_model", "webtoon", "fantasy", "cad"],
     "automation": "termux-bridge CDP",
-    "rendering": "gpu/ (dongseon-studio 흡수)"
+    "rendering": "gpu/ (GPU 렌더링 엔진)"
   },
 
   "directories": {
@@ -53,7 +53,7 @@
     "newTech": 0,
     "sources": [
       "parksy-image (웹툰/CAD/렌더/합성/드로잉)",
-      "dongseon-studio (GPU 렌더링)",
+      "gpu/ (GPU 렌더링 엔진)",
       "OrbitPrompt (영상 엔진)",
       "parksy-audio (BGM/SFX)",
       "recipe-016 (YouTube 업로드)",
@@ -68,9 +68,9 @@
 
   "transition": {
     "from": {
-      "id": "dongseon-studio",
-      "type": "daejehak-studio",
-      "model": "大提學 비즈니스 모델"
+      "id": "dongseon-studio (archived)",
+      "type": "legacy",
+      "model": "pre-transition"
     },
     "to": {
       "id": "gohsy-fashion",

@@ -1,9 +1,9 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "id": "dongseon-llm-engine",
-  "version": "1.0.0",
-  "name": "DONGSEON LLM Engine",
-  "description": "AI/LLM 연동 엔진 설정",
+  "id": "gohsy-fashion-llm-engine",
+  "version": "3.0.0",
+  "name": "GOHSY FASHION LLM Engine",
+  "description": "패션 커머스 AI 에이전트 엔진",
 
   "models": {
     "primary": {
@@ -11,19 +11,13 @@
       "model": "claude-sonnet-4-20250514",
       "maxTokens": 4096,
       "temperature": 0.7,
-      "useCases": ["analysis", "content", "code", "support"]
-    },
-    "fallback": {
-      "provider": "openai",
-      "model": "gpt-4-turbo",
-      "maxTokens": 4096,
-      "temperature": 0.7
+      "useCases": ["product_description", "style_recommendation", "content_generation"]
     },
     "local": {
       "provider": "ollama",
       "model": "llama3:8b",
       "endpoint": "http://localhost:11434",
-      "useCases": ["draft", "summary", "quick"]
+      "useCases": ["draft", "summary", "tag_generation"]
     },
     "embedding": {
       "provider": "openai",
@@ -33,71 +27,44 @@
   },
 
   "agents": {
-    "analyst": {
-      "name": "Business Analyst",
-      "description": "업종 분석 및 동선 설계 에이전트",
-      "promptPath": "prompts/analyst.md",
+    "copywriter": {
+      "name": "Product Copywriter",
+      "description": "상품 설명/카피 생성 에이전트",
+      "promptPath": "prompts/copywriter.md",
       "model": "primary",
-      "capabilities": ["업종분석", "경쟁분석", "동선설계", "인사이트도출"]
+      "capabilities": ["상품설명", "SNS카피", "상세페이지텍스트", "태그생성"]
     },
-    "designer": {
-      "name": "Flow Designer",
-      "description": "UX/UI 동선 설계 에이전트",
-      "promptPath": "prompts/designer.md",
+    "stylist": {
+      "name": "Style Recommender",
+      "description": "코디/스타일 추천 에이전트",
+      "promptPath": "prompts/stylist.md",
       "model": "primary",
-      "capabilities": ["UI설계", "동선맵", "컴포넌트추천", "레이아웃"]
+      "capabilities": ["코디추천", "스타일매칭", "체형별추천", "시즌코디"]
     },
-    "writer": {
-      "name": "Content Writer",
-      "description": "콘텐츠 작성 에이전트",
-      "promptPath": "prompts/writer.md",
+    "seo": {
+      "name": "SEO Optimizer",
+      "description": "쿠팡/네이버 검색 최적화 에이전트",
+      "promptPath": "prompts/seo.md",
       "model": "primary",
-      "capabilities": ["카피라이팅", "블로그", "SNS", "이메일"]
+      "capabilities": ["키워드추출", "제목최적화", "태그추천", "검색어분석"]
     },
     "support": {
       "name": "Customer Support",
-      "description": "고객 응대 에이전트",
+      "description": "고객 문의 응대 에이전트",
       "promptPath": "prompts/support.md",
-      "model": "fallback",
-      "capabilities": ["FAQ", "문의응대", "예약안내", "제품설명"]
-    },
-    "coder": {
-      "name": "Code Generator",
-      "description": "코드 생성 에이전트",
-      "promptPath": "prompts/coder.md",
       "model": "primary",
-      "capabilities": ["HTML", "CSS", "JS", "컴포넌트생성"]
+      "capabilities": ["사이즈문의", "배송문의", "교환반품", "상품문의"]
     }
   },
 
-  "prompts": {
-    "basePath": "engines/llm/prompts/",
-    "templates": [
-      "analyst.md",
-      "designer.md",
-      "writer.md",
-      "support.md",
-      "coder.md",
-      "system.md"
-    ]
-  },
-
   "chains": {
-    "fullService": {
-      "name": "Full Service Chain",
-      "description": "분석 → 설계 → 콘텐츠 → 코드 전체 파이프라인",
+    "productLaunch": {
+      "name": "Product Launch Chain",
+      "description": "card.json → 카피 → SEO → 상세페이지 텍스트 생성",
       "steps": [
-        { "agent": "analyst", "output": "analysis" },
-        { "agent": "designer", "input": "analysis", "output": "design" },
-        { "agent": "writer", "input": "design", "output": "content" },
-        { "agent": "coder", "input": ["design", "content"], "output": "code" }
-      ]
-    },
-    "quickAnalysis": {
-      "name": "Quick Analysis",
-      "description": "빠른 업종 분석",
-      "steps": [
-        { "agent": "analyst", "output": "analysis" }
+        { "agent": "copywriter", "output": "copy" },
+        { "agent": "seo", "input": "copy", "output": "optimized" },
+        { "agent": "stylist", "input": "copy", "output": "styling" }
       ]
     }
   },
@@ -111,14 +78,8 @@
 
   "logging": {
     "enabled": true,
-    "path": "archive/logs/llm/",
+    "path": "analytics/llm-logs/",
     "format": "jsonl",
     "retention": "30d"
-  },
-
-  "cache": {
-    "enabled": true,
-    "ttl": 3600,
-    "maxSize": "100MB"
   }
 }

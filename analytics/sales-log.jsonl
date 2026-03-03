@@ -1,0 +1,2 @@
+{"$dummy":true,"$note":"append-only 원장. 삭제 금지. 실제 매출 발생 시 아래 형식으로 추가."}
+{"timestamp":"2026-03-03T00:00:00+09:00","product_id":"PROD-001","channel":"coupang","event":"dummy_sale","quantity":1,"price":35900,"revenue":35900}
