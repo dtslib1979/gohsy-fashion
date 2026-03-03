@@ -1,0 +1,34 @@
+{
+  "productName": "오버사이즈 니트 가디건",
+  "brandName": "gohsy",
+  "category": "패션의류 > 남성의류 > 가디건",
+  "salePrice": 49900,
+  "listPrice": 59000,
+  "options": {
+    "sizes": [
+      "FREE"
+    ],
+    "colors": [
+      "ivory",
+      "charcoal",
+      "camel"
+    ]
+  },
+  "material": "아크릴 60%, 울 40%",
+  "origin": "한국",
+  "images": {
+    "main": "catalog/products/PROD-001/main.jpg",
+    "detail": [
+      "catalog/products/PROD-001/detail-01.jpg",
+      "catalog/products/PROD-001/detail-02.jpg",
+      "catalog/products/PROD-001/detail-03.jpg"
+    ]
+  },
+  "detailHtml": "coupang/rendered/PROD-001.html",
+  "tags": [
+    "니트",
+    "가디건",
+    "오버핏",
+    "유니섹스"
+  ]
+}

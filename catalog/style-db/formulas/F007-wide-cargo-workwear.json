@@ -1,0 +1,25 @@
+{
+  "id": "F007",
+  "name": "Wide Cargo Workwear",
+  "label": "와이드 카고 워크웨어",
+  "description": "와이드 카고 앵커, 상의 짧게, 발목 가림, 스트릿/워크웨어 무드",
+  "context": "city_boy",
+  "conditions": {
+    "silhouette_type": "A",
+    "pant_width_category": "Wide",
+    "pant_length_ratio": { "min": 0.90 },
+    "upper_length_ratio": { "max": 0.30 },
+    "shoe_exposure_rate": { "max": 0.15 },
+    "layer_depth": { "max": 2 },
+    "formality_score": { "range": [0.15, 0.30] }
+  },
+  "anchors": ["PROD-002"],
+  "complements": {
+    "top": ["오버핏 티, 크롭 후디"],
+    "outer": ["코치 자켓, MA-1"],
+    "acc": ["크로스백, 캡, 청키 스니커즈"]
+  },
+  "source_archive": null,
+  "validation": { "sales_tested": false, "conversion_rate": null },
+  "created": "2026-03-03"
+}

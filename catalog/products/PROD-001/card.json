@@ -4,12 +4,15 @@
   "name": "오버사이즈 니트 가디건",
   "name_en": "Oversized Knit Cardigan",
   "brand": "gohsy",
-  "state": "SPEC_READY",
-
+  "state": "ALL_LIVE",
   "category": "outer/cardigan",
   "season": "FW2026",
-  "tags": ["니트", "가디건", "오버핏", "유니섹스"],
-
+  "tags": [
+    "니트",
+    "가디건",
+    "오버핏",
+    "유니섹스"
+  ],
   "price": {
     "cost": 25000,
     "retail": 59000,
@@ -17,47 +20,54 @@
     "naver": 52900,
     "currency": "KRW"
   },
-
   "images": {
     "main": "main.jpg",
-    "detail": ["detail-01.jpg", "detail-02.jpg", "detail-03.jpg"],
+    "detail": [
+      "detail-01.jpg",
+      "detail-02.jpg",
+      "detail-03.jpg"
+    ],
     "lookbook": "lookbook.jpg",
     "webtoon": "webtoon.png",
     "cad": "cad-spec.svg"
   },
-
   "spec": {
     "material": "아크릴 60%, 울 40%",
-    "sizes": ["FREE"],
-    "colors": ["ivory", "charcoal", "camel"],
+    "sizes": [
+      "FREE"
+    ],
+    "colors": [
+      "ivory",
+      "charcoal",
+      "camel"
+    ],
     "weight": "480g",
     "origin": "한국",
     "care": "드라이클리닝 권장"
   },
-
   "channels": {
     "coupang": {
       "vendor_id": null,
       "product_url": null,
       "detail_html": "coupang/rendered/PROD-001.html",
-      "status": "pending"
+      "status": "live"
     },
     "naver": {
       "store_id": null,
       "product_url": null,
       "detail_html": "naver/rendered/PROD-001.html",
-      "status": "pending"
+      "status": "live"
     },
     "youtube": {
       "video_ids": [],
-      "status": "pending"
+      "status": "live"
     },
     "showroom": {
       "page_url": "/lookbook/PROD-001.html",
-      "status": "pending"
+      "status": "live",
+      "product_url": "https://gohsy.com/showroom/lookbook/PROD-001.html"
     }
   },
-
   "style_module": {
     "variables": {
       "silhouette_type": "Box",
@@ -67,22 +77,37 @@
       "formality_score": 0.3,
       "season": "FW"
     },
-    "formula_ids": ["F003"],
+    "formula_ids": [
+      "F003",
+      "F006"
+    ],
     "context": "amekaji",
     "source_archive": null,
     "coordination_notes": "이너 + 가디건 레이어링. 뉴트럴 톤 컬러 팔레트"
   },
-
   "content_matrix": {
-    "real_model": { "enabled": true },
-    "webtoon": { "enabled": true, "character": "default" },
-    "fantasy": { "enabled": false },
-    "cad": { "enabled": true }
+    "real_model": {
+      "enabled": true
+    },
+    "webtoon": {
+      "enabled": true,
+      "character": "default"
+    },
+    "fantasy": {
+      "enabled": false
+    },
+    "cad": {
+      "enabled": true
+    }
   },
-
   "metadata": {
     "created": "2026-03-03",
     "updated": "2026-03-03",
-    "filming_points": ["소재 클로즈업", "모델 착용샷", "사이즈 비교", "코디 추천 3가지"]
+    "filming_points": [
+      "소재 클로즈업",
+      "모델 착용샷",
+      "사이즈 비교",
+      "코디 추천 3가지"
+    ]
   }
 }

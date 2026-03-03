@@ -1,0 +1,30 @@
+{
+  "originProduct": {
+    "statusType": "SALE",
+    "saleType": "NEW",
+    "leafCategoryId": "50000804",
+    "name": "오버사이즈 니트 가디건",
+    "detailContent": "naver/rendered/PROD-001.html",
+    "salePrice": 52900,
+    "stockQuantity": 999,
+    "deliveryInfo": {
+      "deliveryType": "DELIVERY",
+      "deliveryFee": {
+        "deliveryFeeType": "FREE"
+      }
+    },
+    "detailAttribute": {
+      "originAreaInfo": {
+        "type": "DOMESTIC",
+        "content": "한국"
+      },
+      "afterServiceInfo": {
+        "type": "EMAIL"
+      }
+    }
+  },
+  "smartstoreChannelProduct": {
+    "channelProductName": "오버사이즈 니트 가디건",
+    "storeKeepExclusiveProduct": false
+  }
+}

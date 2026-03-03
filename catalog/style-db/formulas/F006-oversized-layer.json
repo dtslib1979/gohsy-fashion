@@ -1,0 +1,23 @@
+{
+  "id": "F006",
+  "name": "Oversized Layer",
+  "label": "오버사이즈 레이어링",
+  "description": "박스 실루엣 오버사이즈 아우터, 레이어 2~3겹, 저대비 뉴트럴",
+  "context": "amekaji",
+  "conditions": {
+    "silhouette_type": "Box",
+    "upper_length_ratio": { "range": [0.35, 0.45] },
+    "layer_depth": { "range": [2, 3] },
+    "contrast_index": { "range": [0.15, 0.35] },
+    "formality_score": { "range": [0.20, 0.40] }
+  },
+  "anchors": ["PROD-001"],
+  "complements": {
+    "bottom": ["Wide", "Straight"],
+    "inner": ["기본 티, 셔츠"],
+    "acc": ["비니, 토트백, 스니커즈"]
+  },
+  "source_archive": null,
+  "validation": { "sales_tested": false, "conversion_rate": null },
+  "created": "2026-03-03"
+}
