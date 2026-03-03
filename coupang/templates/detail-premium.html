@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{name}} — gohsy</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Pretendard', -apple-system, sans-serif; color: #fff; background: #0a0a0a; max-width: 860px; margin: 0 auto; }
+
+  /* Hero — Premium: dark bg, centered */
+  .hero { width: 100%; text-align: center; padding: 40px 0 0; background: #0a0a0a; }
+  .hero img { width: 90%; max-width: 720px; height: auto; display: inline-block; }
+
+  /* Info */
+  .info-bar { padding: 32px 24px; text-align: center; }
+  .info-bar .brand { font-size: 11px; color: #666; text-transform: uppercase; letter-spacing: 3px; }
+  .info-bar h1 { font-size: 26px; font-weight: 300; margin: 12px 0; letter-spacing: 1px; }
+  .info-bar .price { font-size: 32px; font-weight: 200; color: #fff; }
+  .info-bar .price-retail { font-size: 14px; color: #555; text-decoration: line-through; margin-left: 12px; }
+  .info-bar .season { display: inline-block; font-size: 10px; border: 1px solid #333; padding: 4px 14px; border-radius: 0; color: #888; letter-spacing: 2px; margin-top: 12px; }
+
+  /* Divider */
+  .divider { height: 1px; background: linear-gradient(90deg, transparent, #333, transparent); margin: 0 24px; }
+
+  /* Options */
+  .options { padding: 24px; text-align: center; }
+  .options h3 { font-size: 11px; color: #555; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 12px; }
+  .size-chip { display: inline-block; border: 1px solid #333; padding: 8px 20px; font-size: 12px; margin: 0 4px 8px 0; color: #ccc; letter-spacing: 1px; }
+  .color-chip { display: inline-block; padding: 8px 18px; font-size: 11px; background: #1a1a1a; border: 1px solid #333; margin: 0 4px 8px 0; text-transform: uppercase; color: #aaa; letter-spacing: 1px; }
+
+  /* Detail Images — Cinema style */
+  .detail-section { padding: 40px 0; }
+  .detail-section h2 { font-size: 11px; text-align: center; color: #555; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 24px; }
+  .detail-image { width: 100%; margin-bottom: 2px; }
+  .detail-image img { width: 100%; height: auto; display: block; }
+
+  /* Lookbook — Full bleed */
+  .lookbook-section { padding: 40px 0; }
+  .lookbook-section h2 { font-size: 11px; text-align: center; color: #555; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 24px; }
+  .lookbook-section img { width: 100%; height: auto; display: block; }
+
+  /* Webtoon */
+  .webtoon-section { padding: 40px 0; background: #111; }
+  .webtoon-section h2 { font-size: 11px; text-align: center; color: #555; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 24px; }
+  .webtoon-section img { width: 80%; max-width: 600px; height: auto; display: block; margin: 0 auto; }
+
+  /* Spec */
+  .spec-section { padding: 40px 24px; }
+  .spec-section h2 { font-size: 11px; color: #555; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 20px; text-align: center; }
+  .spec-table { width: 100%; border-collapse: collapse; }
+  .spec-table th { text-align: left; padding: 12px 16px; background: #111; border-bottom: 1px solid #222; font-size: 12px; color: #666; width: 100px; font-weight: 400; }
+  .spec-table td { padding: 12px 16px; border-bottom: 1px solid #222; font-size: 13px; color: #ccc; }
+
+  /* CAD */
+  .cad-section { padding: 40px 24px; text-align: center; background: #0f0f0f; }
+  .cad-section h2 { font-size: 11px; color: #555; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 24px; }
+  .cad-section img { max-width: 100%; height: auto; filter: invert(0.85); }
+
+  /* Footer */
+  .detail-footer { padding: 48px 24px; text-align: center; }
+  .detail-footer .brand-name { font-size: 24px; font-weight: 200; letter-spacing: 6px; color: #fff; }
+  .detail-footer .tagline { font-size: 11px; color: #444; margin-top: 8px; letter-spacing: 2px; }
+  .detail-footer .links { margin-top: 20px; }
+  .detail-footer a { color: #555; text-decoration: none; font-size: 11px; letter-spacing: 1px; border-bottom: 1px solid #333; padding-bottom: 2px; }
+
+  .tags { padding: 16px 24px; font-size: 11px; color: #444; text-align: center; letter-spacing: 1px; }
+</style>
+</head>
+<body>
+
+<!-- Hero -->
+<div class="hero">
+  <img src="{{main_image}}" alt="{{name}}">
+</div>
+
+<!-- Info -->
+<div class="info-bar">
+  <div class="brand">{{brand}}</div>
+  <h1>{{name}}</h1>
+  <div>
+    <span class="price">{{price_coupang}}</span>
+    <span class="price-retail">{{price_retail}}</span>
+  </div>
+  <div class="season">{{season}}</div>
+</div>
+
+<div class="divider"></div>
+
+<!-- Options -->
+<div class="options">
+  <h3>Size</h3>
+  <div>{{sizes}}</div>
+  <h3 style="margin-top:20px">Color</h3>
+  <div>{{colors}}</div>
+</div>
+
+<div class="divider"></div>
+
+<!-- Detail -->
+<div class="detail-section">
+  <h2>Detail</h2>
+{{detail_images}}
+</div>
+
+<!-- Lookbook -->
+<div class="lookbook-section">
+  <h2>Lookbook</h2>
+  <img src="{{lookbook_image}}" alt="{{name}} lookbook" loading="lazy">
+</div>
+
+<!-- Webtoon -->
+<div class="webtoon-section">
+  <h2>Story</h2>
+  <img src="{{webtoon_image}}" alt="{{name}} webtoon" loading="lazy">
+</div>
+
+<!-- Spec -->
+<div class="spec-section">
+  <h2>Specification</h2>
+  <table class="spec-table">
+{{spec_table}}
+  </table>
+</div>
+
+<!-- CAD -->
+<div class="cad-section">
+  <h2>Technical Drawing</h2>
+  <img src="{{cad_image}}" alt="{{name}} CAD">
+</div>
+
+<!-- Tags -->
+<div class="tags">{{tags}}</div>
+
+<!-- Footer -->
+<div class="detail-footer">
+  <div class="brand-name">GOHSY</div>
+  <div class="tagline">wear the story</div>
+  <div class="links">
+    <a href="{{showroom_url}}">Visit Showroom</a>
+  </div>
+</div>
+
+</body>
+</html>

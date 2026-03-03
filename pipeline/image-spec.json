@@ -1,0 +1,76 @@
+{
+  "$schema": "image-spec.v1.0",
+  "description": "parksy-image 요청 규격 — gohsy-fashion 상품 이미지",
+  "source_repo": "dtslib1979/parksy-image",
+  "target_dir": "catalog/products/{product_id}/",
+
+  "request_types": {
+    "product_photo": {
+      "description": "상품 메인/디테일 이미지",
+      "scripts": ["scripts/render/bd_renderer.py", "scripts/compose/broadcast_cut.py"],
+      "output_format": "jpg",
+      "resolution": "1200x1600",
+      "outputs": {
+        "main": "{product_id}/main.jpg",
+        "detail": "{product_id}/detail-{n}.jpg",
+        "lookbook": "{product_id}/lookbook.jpg"
+      },
+      "params": {
+        "background": "white_studio | lifestyle | flat_lay",
+        "lighting": "soft_diffused",
+        "crop": "center"
+      }
+    },
+    "webtoon_cut": {
+      "description": "웹툰 캐릭터 착용 컷",
+      "scripts": ["scripts/story/engine.js", "scripts/compose/panel_composer.py", "scripts/compose/webtoon_master_composer.py"],
+      "output_format": "png",
+      "resolution": "1080x1920",
+      "outputs": {
+        "webtoon": "{product_id}/webtoon.png",
+        "episode": "content/webtoon/episodes/{episode_id}.png"
+      },
+      "story_spec": {
+        "structure": ["setup", "conflict", "reflection", "conclusion"],
+        "emotion_vector": { "joy": 0.6, "neutral": 0.3, "surprise": 0.1 },
+        "camera": ["medium", "closeup", "full", "closeup"],
+        "template": "fashion_lookbook"
+      }
+    },
+    "cad_pattern": {
+      "description": "CAD 패턴 도면 / 스펙시트",
+      "scripts": ["scripts/cad/generate_svg.js", "scripts/cad/generate_dxf.js"],
+      "output_format": "svg",
+      "outputs": {
+        "cad": "{product_id}/cad-spec.svg",
+        "dxf": "content/cad/patterns/{product_id}.dxf"
+      },
+      "params": {
+        "type": "garment_pattern | accessory_spec | flat_technical",
+        "scale": "1:1",
+        "annotations": true
+      }
+    },
+    "fantasy_scene": {
+      "description": "판타지 세계관 배경 + 상품 배치",
+      "scripts": ["scripts/render/bd_renderer.py", "scripts/compose/broadcast_cut.py"],
+      "output_format": "jpg",
+      "resolution": "1920x1080",
+      "outputs": {
+        "background": "content/fantasy/backgrounds/{scene_id}.jpg",
+        "composite": "{product_id}/fantasy.jpg"
+      },
+      "params": {
+        "world": "worldbuilding.json reference",
+        "mood": "cinematic | ethereal | dark_fantasy",
+        "product_placement": "foreground | character_worn | display"
+      }
+    }
+  },
+
+  "sync": {
+    "method": "scripts/sync-from-parksy-image.sh",
+    "trigger": "manual or post-render",
+    "target": "catalog/products/{product_id}/"
+  }
+}

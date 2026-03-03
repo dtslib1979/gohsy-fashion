@@ -1,0 +1,53 @@
+{
+  "$schema": "render-spec.v1.0",
+  "description": "GPU 렌더링 규격 — 상세페이지 + 영상",
+  "engine": "gpu/detail-renderer/",
+
+  "detail_page": {
+    "description": "쿠팡/네이버 상세페이지 HTML 자동 생성",
+    "input": "catalog/products/{product_id}/card.json",
+    "templates": {
+      "standard": "coupang/templates/detail-standard.html",
+      "premium": "coupang/templates/detail-premium.html",
+      "naver_standard": "naver/templates/detail-standard.html",
+      "naver_premium": "naver/templates/detail-premium.html"
+    },
+    "output": {
+      "coupang": "coupang/rendered/{product_id}.html",
+      "naver": "naver/rendered/{product_id}.html"
+    },
+    "image_slots": {
+      "hero": "main.jpg (1200x1600)",
+      "details": "detail-*.jpg (최대 10장)",
+      "spec_table": "card.json → 자동 변환",
+      "cad_drawing": "cad-spec.svg (선택)"
+    }
+  },
+
+  "product_video": {
+    "description": "상품 소개 영상 자동 생성",
+    "input": ["card.json", "images/*", "bgm.mp3"],
+    "engine": "gpu/render/ (기존 dongseon 엔진)",
+    "output": "youtube/rendered/{product_id}.mp4",
+    "spec": {
+      "resolution": "1080x1920",
+      "duration": "30-60s",
+      "format": "mp4 (h264)",
+      "fps": 30
+    },
+    "structure": [
+      { "scene": "intro", "duration": "3s", "content": "브랜드 로고" },
+      { "scene": "hero", "duration": "5s", "content": "main.jpg 풀스크린" },
+      { "scene": "details", "duration": "15s", "content": "detail-*.jpg 슬라이드" },
+      { "scene": "spec", "duration": "5s", "content": "스펙 텍스트 오버레이" },
+      { "scene": "price", "duration": "3s", "content": "가격 + CTA" },
+      { "scene": "outro", "duration": "3s", "content": "채널 링크" }
+    ]
+  },
+
+  "batch": {
+    "script": "gpu/detail-renderer/batch-render.sh",
+    "mode": "all_pending | specific_ids",
+    "parallelism": 1
+  }
+}

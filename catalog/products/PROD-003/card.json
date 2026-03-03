@@ -1,0 +1,58 @@
+{
+  "schema_version": "1.1",
+  "product_id": "PROD-003",
+  "name": "미니멀 크로스백",
+  "name_en": "Minimal Crossbody Bag",
+  "brand": "gohsy",
+  "state": "SPEC_READY",
+
+  "category": "acc/bag",
+  "season": "ALL",
+  "tags": ["미니멀", "크로스백", "유니섹스", "데일리"],
+
+  "price": {
+    "cost": 12000,
+    "retail": 35000,
+    "coupang": 29900,
+    "naver": 32900,
+    "currency": "KRW"
+  },
+
+  "images": {
+    "main": "main.jpg",
+    "detail": ["detail-01.jpg", "detail-02.jpg"],
+    "lookbook": "lookbook.jpg",
+    "webtoon": null,
+    "cad": null
+  },
+
+  "spec": {
+    "material": "PU 가죽",
+    "sizes": ["ONE"],
+    "colors": ["black", "cream", "olive"],
+    "weight": "280g",
+    "dimensions": "22×15×6cm",
+    "origin": "한국",
+    "care": "마른 천으로 닦기"
+  },
+
+  "channels": {
+    "coupang": { "vendor_id": null, "product_url": null, "detail_html": "coupang/rendered/PROD-003.html", "status": "pending" },
+    "naver": { "store_id": null, "product_url": null, "detail_html": "naver/rendered/PROD-003.html", "status": "pending" },
+    "youtube": { "video_ids": [], "status": "pending" },
+    "showroom": { "page_url": "/lookbook/PROD-003.html", "status": "pending" }
+  },
+
+  "content_matrix": {
+    "real_model": { "enabled": true },
+    "webtoon": { "enabled": false },
+    "fantasy": { "enabled": false },
+    "cad": { "enabled": false }
+  },
+
+  "metadata": {
+    "created": "2026-03-03",
+    "updated": "2026-03-03",
+    "filming_points": ["수납 공간", "착용 크로스", "소재 질감", "컬러 비교"]
+  }
+}

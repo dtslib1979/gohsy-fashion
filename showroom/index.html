@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GOHSY — Showroom</title>
+<meta name="description" content="gohsy.com 패션 쇼룸. 룩북 갤러리.">
+<meta name="theme-color" content="#0F0F0F">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#0F0F0F;--surface:#1A1A1A;--card:#222;--accent:#E94560;
+  --text:#F5F5F5;--dim:rgba(245,245,245,0.5);--border:rgba(255,255,255,0.06);
+}
+body{font-family:-apple-system,system-ui,'Noto Sans KR',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:100;padding:1rem 1.5rem;background:rgba(15,15,15,0.9);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between}
+.nav-brand{font-size:1.3rem;font-weight:800;letter-spacing:0.15em}
+.nav-brand span{color:var(--accent)}
+.nav-links{display:flex;gap:1.5rem}
+.nav-links a{color:var(--dim);text-decoration:none;font-size:0.8rem;font-weight:500;letter-spacing:0.05em;transition:color 0.2s}
+.nav-links a:hover,.nav-links a.active{color:var(--text)}
+@media(max-width:500px){.nav-links{gap:0.8rem}.nav-links a{font-size:0.7rem}}
+
+/* HERO */
+.hero{padding:4rem 1.5rem 3rem;text-align:center}
+.hero h1{font-size:2.5rem;font-weight:800;letter-spacing:0.1em;margin-bottom:0.5rem}
+.hero h1 span{color:var(--accent)}
+.hero-sub{color:var(--dim);font-size:0.85rem;margin-bottom:1rem}
+.hero-season{display:inline-block;font-size:0.65rem;padding:0.3rem 0.8rem;border:1px solid var(--accent);border-radius:100px;color:var(--accent);letter-spacing:0.1em}
+
+/* FILTERS */
+.filters{display:flex;gap:0.5rem;justify-content:center;padding:0 1.5rem 2rem;flex-wrap:wrap}
+.filter-btn{padding:0.5rem 1rem;border:1px solid var(--border);border-radius:8px;background:transparent;color:var(--dim);font-size:0.75rem;cursor:pointer;transition:all 0.2s}
+.filter-btn:hover,.filter-btn.active{border-color:var(--accent);color:var(--accent);background:rgba(233,69,96,0.08)}
+
+/* GRID */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;padding:0 1.5rem;max-width:1100px;margin:0 auto}
+@media(max-width:400px){.grid{grid-template-columns:1fr}}
+
+/* CARD */
+.product-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;overflow:hidden;transition:transform 0.25s,border-color 0.25s;cursor:pointer}
+.product-card:hover{transform:translateY(-6px);border-color:rgba(233,69,96,0.3)}
+.card-image{width:100%;aspect-ratio:3/4;background:var(--card);display:flex;align-items:center;justify-content:center;font-size:3rem;position:relative}
+.card-badge{position:absolute;top:0.8rem;left:0.8rem;font-size:0.6rem;padding:0.25rem 0.6rem;background:rgba(233,69,96,0.9);color:#fff;border-radius:4px;font-weight:600}
+.card-body{padding:1rem}
+.card-category{font-size:0.65rem;color:var(--accent);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.3rem}
+.card-name{font-size:0.95rem;font-weight:600;margin-bottom:0.3rem}
+.card-price{font-size:0.9rem;font-weight:700;color:var(--accent)}
+.card-price .retail{text-decoration:line-through;color:var(--dim);font-weight:400;font-size:0.8rem;margin-left:0.4rem}
+.card-colors{display:flex;gap:4px;margin-top:0.6rem}
+.color-dot{width:14px;height:14px;border-radius:50%;border:1px solid var(--border)}
+.card-tags{display:flex;gap:4px;margin-top:0.5rem;flex-wrap:wrap}
+.card-tag{font-size:0.6rem;padding:2px 6px;border:1px solid var(--border);border-radius:4px;color:var(--dim)}
+
+/* CHANNELS STATUS */
+.channels-bar{display:flex;gap:0.5rem;margin-top:0.8rem;padding-top:0.8rem;border-top:1px solid var(--border)}
+.ch-dot{font-size:0.6rem;padding:2px 6px;border-radius:4px;background:rgba(255,255,255,0.04);color:var(--dim)}
+.ch-dot.live{background:rgba(0,200,100,0.1);color:#00c864}
+
+/* FOOTER */
+footer{text-align:center;padding:4rem 1.5rem 2rem;margin-top:3rem;border-top:1px solid var(--border)}
+footer .brand{font-size:1.2rem;font-weight:800;letter-spacing:0.15em;margin-bottom:0.3rem}
+footer .brand span{color:var(--accent)}
+footer .sub{font-size:0.65rem;color:var(--dim);margin-bottom:1rem}
+footer .links{display:flex;gap:1.5rem;justify-content:center}
+footer .links a{font-size:0.7rem;color:var(--dim);text-decoration:none;transition:color 0.2s}
+footer .links a:hover{color:var(--accent)}
+
+/* EMPTY STATE */
+.empty{text-align:center;padding:4rem 1.5rem;color:var(--dim)}
+.empty-icon{font-size:3rem;margin-bottom:1rem}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-brand">GO<span>H</span>SY</div>
+  <div class="nav-links">
+    <a href="#" class="active">Lookbook</a>
+    <a href="#" id="navWebtoon">Webtoon</a>
+    <a href="#" id="navFantasy">Fantasy</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <h1>GO<span>H</span>SY</h1>
+  <p class="hero-sub">Fashion Commerce Showroom</p>
+  <span class="hero-season">2026 COLLECTION</span>
+</section>
+
+<div class="filters" id="filters"></div>
+
+<div class="grid" id="productGrid"></div>
+
+<div class="empty" id="emptyState" style="display:none">
+  <div class="empty-icon">🏗️</div>
+  <p>상품 준비 중</p>
+</div>
+
+<footer>
+  <div class="brand">GO<span>H</span>SY</div>
+  <div class="sub">Fashion Commerce HQ — 4-Channel Loopback</div>
+  <div class="links">
+    <a href="/">Home</a>
+    <a href="https://github.com/dtslib1979/gohsy-fashion">GitHub</a>
+  </div>
+</footer>
+
+<script>
+(function(){
+  'use strict';
+
+  var CATALOG_URL = '../catalog/index.json';
+  var CATEGORIES_URL = '../catalog/categories.json';
+  var COLOR_MAP = {
+    ivory:'#FFFFF0',charcoal:'#36454F',camel:'#C19A6B',
+    black:'#222',khaki:'#BDB76B',beige:'#F5F5DC',
+    cream:'#FFFDD0',olive:'#808000',white:'#fff',navy:'#000080'
+  };
+  var CAT_ICONS = {outer:'🧥',top:'👕',bottom:'👖',acc:'👜'};
+
+  var allProducts = [];
+  var currentFilter = 'all';
+
+  function init(){
+    Promise.all([
+      fetch(CATALOG_URL).then(function(r){return r.json()}),
+      fetch(CATEGORIES_URL).then(function(r){return r.json()})
+    ]).then(function(results){
+      allProducts = results[0].products || [];
+      var cats = results[1].categories || {};
+      renderFilters(cats);
+      renderGrid(allProducts);
+    }).catch(function(){
+      document.getElementById('emptyState').style.display = 'block';
+    });
+  }
+
+  function renderFilters(cats){
+    var el = document.getElementById('filters');
+    var html = '<button class="filter-btn active" data-cat="all">전체</button>';
+    var keys = Object.keys(cats);
+    for(var i=0;i<keys.length;i++){
+      var k = keys[i];
+      html += '<button class="filter-btn" data-cat="'+k+'">'+cats[k].icon+' '+cats[k].label+'</button>';
+    }
+    el.innerHTML = html;
+    el.addEventListener('click',function(e){
+      var btn = e.target.closest('.filter-btn');
+      if(!btn) return;
+      currentFilter = btn.dataset.cat;
+      var btns = el.querySelectorAll('.filter-btn');
+      for(var j=0;j<btns.length;j++) btns[j].classList.remove('active');
+      btn.classList.add('active');
+      var filtered = currentFilter === 'all' ? allProducts : allProducts.filter(function(p){
+        return p.category.split('/')[0] === currentFilter;
+      });
+      renderGrid(filtered);
+    });
+  }
+
+  function renderGrid(products){
+    var grid = document.getElementById('productGrid');
+    var empty = document.getElementById('emptyState');
+    if(!products.length){
+      grid.innerHTML = '';
+      empty.style.display = 'block';
+      return;
+    }
+    empty.style.display = 'none';
+
+    var html = '';
+    for(var i=0;i<products.length;i++){
+      var p = products[i];
+      var mainCat = p.category.split('/')[0];
+      var icon = CAT_ICONS[mainCat] || '👗';
+      var colors = p.colors || [];
+      var colorDots = '';
+      for(var c=0;c<colors.length;c++){
+        var hex = COLOR_MAP[colors[c]] || '#888';
+        colorDots += '<span class="color-dot" style="background:'+hex+'" title="'+colors[c]+'"></span>';
+      }
+      var tags = (p.tags || []);
+      var tagHtml = '';
+      for(var t=0;t<Math.min(tags.length,3);t++){
+        tagHtml += '<span class="card-tag">'+tags[t]+'</span>';
+      }
+
+      var chHtml = '<span class="ch-dot">쿠팡</span><span class="ch-dot">네이버</span><span class="ch-dot">YT</span><span class="ch-dot">쇼룸</span>';
+
+      html += '<div class="product-card" data-id="'+p.id+'" onclick="location.href=\'lookbook/'+p.id+'.html\'">';
+      html += '<div class="card-image">'+icon;
+      html += '<span class="card-badge">'+p.season+'</span>';
+      html += '</div>';
+      html += '<div class="card-body">';
+      html += '<div class="card-category">'+p.category.replace('/',  ' / ')+'</div>';
+      html += '<div class="card-name">'+p.name+'</div>';
+      html += '<div class="card-price">₩'+p.price.toLocaleString();
+      html += '</div>';
+      html += '<div class="card-colors">'+colorDots+'</div>';
+      html += '<div class="channels-bar">'+chHtml+'</div>';
+      html += '</div></div>';
+    }
+    grid.innerHTML = html;
+  }
+
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
+</script>
+</body>
+</html>

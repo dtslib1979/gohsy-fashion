@@ -1,0 +1,37 @@
+{
+  "$schema": "pattern-template.v1.0",
+  "description": "CAD 패턴 도면 요청 템플릿",
+  "source": "parksy-image/scripts/cad/",
+
+  "garment": {
+    "product_id": "",
+    "type": "garment_pattern | accessory_spec | flat_technical",
+    "category": "",
+    "name": ""
+  },
+
+  "pattern_spec": {
+    "scale": "1:1",
+    "unit": "cm",
+    "seam_allowance": 1.0,
+    "grain_line": true,
+    "notches": true,
+    "annotations": true
+  },
+
+  "measurements": {
+    "bust": null,
+    "waist": null,
+    "hip": null,
+    "length": null,
+    "sleeve": null,
+    "inseam": null,
+    "shoulder": null
+  },
+
+  "output_formats": ["svg", "dxf"],
+  "output_paths": {
+    "svg": "catalog/products/{product_id}/cad-spec.svg",
+    "dxf": "content/cad/patterns/{product_id}.dxf"
+  }
+}

@@ -1,86 +1,73 @@
 {
-  "$schema": "PRODUCT_CARD.v1.0",
-  "$dummy": true,
-  "$note": "더미 웨이퍼. 파이프라인 검증용. 실제 상품 등록 시 교체.",
+  "schema_version": "1.1",
+  "product_id": "PROD-001",
+  "name": "오버사이즈 니트 가디건",
+  "name_en": "Oversized Knit Cardigan",
+  "brand": "gohsy",
+  "state": "SPEC_READY",
 
-  "id": "PROD-001",
-  "name": "오버사이즈 옥스포드 셔츠 (화이트)",
-  "nameEn": "Oversized Oxford Shirt (White)",
-  "category": "캐주얼",
-  "season": "SS",
-  "tags": ["옥스포드", "오버핏", "캐주얼", "시티보이"],
+  "category": "outer/cardigan",
+  "season": "FW2026",
+  "tags": ["니트", "가디건", "오버핏", "유니섹스"],
 
   "price": {
-    "cost": 12000,
-    "retail": 39000,
-    "coupang": 35900,
-    "naver": 37900
-  },
-
-  "spec": {
-    "material": "면 100% (옥스포드 직조)",
-    "sizes": ["M", "L", "XL"],
-    "colors": ["white", "light_blue", "beige"],
-    "weight_g": 280,
-    "origin": "한국"
+    "cost": 25000,
+    "retail": 59000,
+    "coupang": 49900,
+    "naver": 52900,
+    "currency": "KRW"
   },
 
   "images": {
-    "main": "content/models/outfits/PROD-001-main.jpg",
-    "detail": ["content/models/outfits/PROD-001-detail-01.jpg"],
-    "lookbook": "content/models/outfits/PROD-001-lookbook.jpg",
-    "webtoon": "content/webtoon/episodes/PROD-001-webtoon.png",
-    "cad": "content/cad/specs/PROD-001-spec.svg"
+    "main": "main.jpg",
+    "detail": ["detail-01.jpg", "detail-02.jpg", "detail-03.jpg"],
+    "lookbook": "lookbook.jpg",
+    "webtoon": "webtoon.png",
+    "cad": "cad-spec.svg"
   },
 
-  "style_module": {
-    "variables": {
-      "silhouette_type": "Box",
-      "upper_length_ratio": 0.38,
-      "pant_width_category": "Straight",
-      "layer_depth": 1,
-      "contrast_index": 0.10,
-      "shoe_exposure_rate": 0.0,
-      "formality_score": 0.35,
-      "color_palette": ["#FFFFFF", "#F5F0E8"],
-      "season": "SS"
-    },
-    "formula_ids": ["F005"],
-    "context": "city_boy",
-    "source_archive": "popeye_1988_vol31_p28"
+  "spec": {
+    "material": "아크릴 60%, 울 40%",
+    "sizes": ["FREE"],
+    "colors": ["ivory", "charcoal", "camel"],
+    "weight": "480g",
+    "origin": "한국",
+    "care": "드라이클리닝 권장"
   },
 
   "channels": {
-    "coupang": { "status": "pending", "registered_at": null, "url": null },
-    "naver": { "status": "pending", "registered_at": null, "url": null },
-    "youtube": { "status": "pending", "video_id": null },
-    "showroom": { "status": "pending", "page": null }
+    "coupang": {
+      "vendor_id": null,
+      "product_url": null,
+      "detail_html": "coupang/rendered/PROD-001.html",
+      "status": "pending"
+    },
+    "naver": {
+      "store_id": null,
+      "product_url": null,
+      "detail_html": "naver/rendered/PROD-001.html",
+      "status": "pending"
+    },
+    "youtube": {
+      "video_ids": [],
+      "status": "pending"
+    },
+    "showroom": {
+      "page_url": "/lookbook/PROD-001.html",
+      "status": "pending"
+    }
   },
 
   "content_matrix": {
-    "real_model": { "status": "pending", "path": null },
-    "webtoon": { "status": "pending", "path": null },
-    "fantasy": { "status": "pending", "path": null },
-    "cad": { "status": "pending", "path": null }
+    "real_model": { "enabled": true },
+    "webtoon": { "enabled": true, "character": "default" },
+    "fantasy": { "enabled": false },
+    "cad": { "enabled": true }
   },
 
-  "pipeline": {
-    "image_source": "parksy-image/scripts/render",
-    "audio_source": "parksy-audio/lyria3",
-    "render_engine": "gpu/"
-  },
-
-  "analytics": {
-    "views": 0,
-    "clicks": 0,
-    "sales": 0,
-    "revenue": 0,
-    "return_rate": null
-  },
-
-  "meta": {
-    "created_at": "2026-03-03",
-    "updated_at": "2026-03-03",
-    "created_by": "dummy-wafer"
+  "metadata": {
+    "created": "2026-03-03",
+    "updated": "2026-03-03",
+    "filming_points": ["소재 클로즈업", "모델 착용샷", "사이즈 비교", "코디 추천 3가지"]
   }
 }

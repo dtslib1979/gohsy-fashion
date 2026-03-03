@@ -1,87 +1,84 @@
 {
-  "$schema": "pipeline-flow.v1.0",
-  "$dummy": true,
+  "$schema": "flow.v1.0",
+  "description": "전체 워크플로우 정의 — PRODUCT_CARD → 4채널 배포",
 
   "stages": [
     {
-      "id": "S1",
-      "name": "PRODUCT_CARD 작성",
-      "input": "수동 입력",
+      "id": "S1_SPEC",
+      "name": "상품 기획",
+      "input": "시장 조사 + analytics/ 데이터",
       "output": "catalog/products/PROD-XXX/card.json",
-      "executor": "human",
-      "status": "active"
+      "state_transition": "→ DRAFT → SPEC_READY",
+      "manual": true,
+      "tools": []
     },
     {
-      "id": "S2",
-      "name": "AI 에셋 생성",
-      "input": "card.json",
-      "output": "content/{models,webtoon,cad,fantasy}/",
-      "executor": "parksy-image",
-      "depends_on": ["S1"],
-      "status": "not_implemented"
+      "id": "S2_ASSET",
+      "name": "에셋 생성",
+      "input": "card.json + pipeline/image-spec.json",
+      "output": "main.jpg + detail-*.jpg + lookbook.jpg + webtoon.png + cad-spec.svg",
+      "state_transition": "SPEC_READY → ASSETS_READY",
+      "manual": false,
+      "tools": [
+        "parksy-image/scripts/render/",
+        "parksy-image/scripts/story/",
+        "parksy-image/scripts/cad/",
+        "parksy-image/scripts/compose/",
+        "scripts/sync-from-parksy-image.sh"
+      ]
     },
     {
-      "id": "S3",
+      "id": "S3_RENDER",
       "name": "GPU 렌더링",
-      "input": "content/",
-      "output": "{coupang,naver}/rendered/, youtube/rendered/",
-      "executor": "gpu/",
-      "depends_on": ["S2"],
-      "status": "not_implemented"
+      "input": "card.json + images + bgm",
+      "output": "coupang HTML + naver HTML + YouTube MP4",
+      "state_transition": "ASSETS_READY → RENDERED",
+      "manual": false,
+      "tools": [
+        "gpu/detail-renderer/generate-detail.js",
+        "gpu/render/",
+        "scripts/sync-from-parksy-audio.sh"
+      ]
     },
     {
-      "id": "S4a",
-      "name": "쿠팡 등록",
-      "input": "coupang/rendered/",
-      "output": "card.json → channels.coupang.url",
-      "executor": "automation/adapters/coupang.js",
-      "depends_on": ["S3"],
-      "status": "not_implemented"
+      "id": "S4_DEPLOY",
+      "name": "4채널 배포",
+      "input": "rendered HTML + MP4 + showroom page",
+      "output": "4채널 라이브",
+      "state_transition": "RENDERED → COUPANG_LIVE + NAVER_LIVE + YOUTUBE_LIVE + SHOWROOM_LIVE → ALL_LIVE",
+      "manual": false,
+      "tools": [
+        "automation/orchestrator.js",
+        "automation/adapters/coupang.js",
+        "automation/adapters/naver.js",
+        "automation/adapters/youtube.js",
+        "automation/adapters/showroom.js"
+      ]
     },
     {
-      "id": "S4b",
-      "name": "네이버 등록",
-      "input": "naver/rendered/",
-      "output": "card.json → channels.naver.url",
-      "executor": "automation/adapters/naver.js",
-      "depends_on": ["S3"],
-      "status": "not_implemented"
-    },
-    {
-      "id": "S4c",
-      "name": "YouTube 업로드",
-      "input": "youtube/rendered/",
-      "output": "card.json → channels.youtube.video_id",
-      "executor": "automation/adapters/youtube.js",
-      "depends_on": ["S3"],
-      "status": "not_implemented"
-    },
-    {
-      "id": "S4d",
-      "name": "쇼룸 배포",
-      "input": "showroom/",
-      "output": "card.json → channels.showroom.page",
-      "executor": "automation/adapters/showroom.js",
-      "depends_on": ["S3"],
-      "status": "not_implemented"
-    },
-    {
-      "id": "S5",
-      "name": "매출 데이터 수집",
-      "input": "4채널 판매 데이터",
-      "output": "analytics/*.jsonl",
-      "executor": "scripts/generate-report.sh",
-      "depends_on": ["S4a", "S4b", "S4c", "S4d"],
-      "status": "not_implemented"
-    },
-    {
-      "id": "S6",
-      "name": "루프백 (다음 PRODUCT_CARD)",
-      "input": "analytics/*.jsonl",
-      "output": "다음 PRODUCT_CARD 기획",
-      "executor": "human + style_module(V-F-C-D)",
-      "depends_on": ["S5"],
-      "status": "not_implemented"
+      "id": "S5_TRACK",
+      "name": "매출 추적 + 루프백",
+      "input": "채널 매출/트래픽 데이터",
+      "output": "analytics/reports/ + 다음 PRODUCT_CARD",
+      "state_transition": "ALL_LIVE → TRACKING → S1_SPEC (루프)",
+      "manual": true,
+      "tools": [
+        "analytics/sales-log.jsonl",
+        "analytics/channel-performance.jsonl",
+        "scripts/generate-report.sh"
+      ]
     }
-  ]
+  ],
+
+  "state_machine": {
+    "states": ["DRAFT", "SPEC_READY", "ASSETS_READY", "RENDERED", "COUPANG_LIVE", "NAVER_LIVE", "YOUTUBE_LIVE", "SHOWROOM_LIVE", "ALL_LIVE", "TRACKING", "DISCONTINUED", "CANCELLED"],
+    "transitions": {
+      "DRAFT → SPEC_READY": "card.json 스펙 확정",
+      "SPEC_READY → ASSETS_READY": "이미지/웹툰/CAD 에셋 생성 완료",
+      "ASSETS_READY → RENDERED": "상세페이지 + 영상 렌더링 완료",
+      "RENDERED → *_LIVE": "각 채널 등록 완료",
+      "ALL_LIVE → TRACKING": "전 채널 라이브 확인",
+      "TRACKING → DRAFT": "루프백 (매출 → 다음 기획)"
+    }
+  }
 }

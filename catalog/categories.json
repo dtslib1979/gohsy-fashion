@@ -1,0 +1,30 @@
+{
+  "$schema": "categories.v1.0",
+  "updated": "2026-03-03",
+  "categories": {
+    "outer": {
+      "label": "아우터",
+      "labelEn": "Outer",
+      "subcategories": ["cardigan", "jacket", "coat", "vest"],
+      "icon": "🧥"
+    },
+    "top": {
+      "label": "상의",
+      "labelEn": "Top",
+      "subcategories": ["knit", "shirt", "tee", "hoodie"],
+      "icon": "👕"
+    },
+    "bottom": {
+      "label": "하의",
+      "labelEn": "Bottom",
+      "subcategories": ["pants", "skirt", "shorts"],
+      "icon": "👖"
+    },
+    "acc": {
+      "label": "액세서리",
+      "labelEn": "Accessory",
+      "subcategories": ["bag", "hat", "scarf", "jewelry"],
+      "icon": "👜"
+    }
+  }
+}

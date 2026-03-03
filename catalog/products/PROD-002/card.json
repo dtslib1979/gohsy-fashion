@@ -1,0 +1,57 @@
+{
+  "schema_version": "1.1",
+  "product_id": "PROD-002",
+  "name": "와이드 핏 카고 팬츠",
+  "name_en": "Wide Fit Cargo Pants",
+  "brand": "gohsy",
+  "state": "SPEC_READY",
+
+  "category": "bottom/pants",
+  "season": "SS2026",
+  "tags": ["카고", "와이드", "스트릿", "유니섹스"],
+
+  "price": {
+    "cost": 18000,
+    "retail": 45000,
+    "coupang": 39900,
+    "naver": 42900,
+    "currency": "KRW"
+  },
+
+  "images": {
+    "main": "main.jpg",
+    "detail": ["detail-01.jpg", "detail-02.jpg"],
+    "lookbook": "lookbook.jpg",
+    "webtoon": "webtoon.png",
+    "cad": "cad-spec.svg"
+  },
+
+  "spec": {
+    "material": "면 100%",
+    "sizes": ["S", "M", "L", "XL"],
+    "colors": ["black", "khaki", "beige"],
+    "weight": "420g",
+    "origin": "한국",
+    "care": "세탁기 가능 (찬물)"
+  },
+
+  "channels": {
+    "coupang": { "vendor_id": null, "product_url": null, "detail_html": "coupang/rendered/PROD-002.html", "status": "pending" },
+    "naver": { "store_id": null, "product_url": null, "detail_html": "naver/rendered/PROD-002.html", "status": "pending" },
+    "youtube": { "video_ids": [], "status": "pending" },
+    "showroom": { "page_url": "/lookbook/PROD-002.html", "status": "pending" }
+  },
+
+  "content_matrix": {
+    "real_model": { "enabled": true },
+    "webtoon": { "enabled": true, "character": "default" },
+    "fantasy": { "enabled": false },
+    "cad": { "enabled": true }
+  },
+
+  "metadata": {
+    "created": "2026-03-03",
+    "updated": "2026-03-03",
+    "filming_points": ["포켓 디테일", "실루엣 측면샷", "소재 텍스쳐", "코디 추천"]
+  }
+}

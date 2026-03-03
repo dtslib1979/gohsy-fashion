@@ -1,0 +1,51 @@
+{
+  "$schema": "youtube-template.v1.0",
+  "series": "B",
+  "name": "도면에서 옷장까지",
+  "resolution": "1080x1920",
+  "fps": 30,
+  "format": "mp4",
+
+  "structure": [
+    {
+      "scene": "pattern",
+      "duration": "5s",
+      "content": "CAD 도면 풀스크린",
+      "source": "cad-spec.svg",
+      "transition": "fade_in"
+    },
+    {
+      "scene": "process",
+      "duration": "30-90s",
+      "content": "제작 과정 타임랩스",
+      "source": "detail-*.jpg (순차 슬라이드)",
+      "transition": "crossfade",
+      "bgm": "lyria3/shorts/",
+      "speed": "4x-8x"
+    },
+    {
+      "scene": "result",
+      "duration": "10s",
+      "content": "완성품 회전 뷰",
+      "source": "main.jpg + lookbook.jpg",
+      "transition": "zoom_out"
+    },
+    {
+      "scene": "price",
+      "duration": "5s",
+      "content": "가격 + 구매 링크",
+      "overlay": {
+        "price": true,
+        "coupang_url": true,
+        "naver_url": true
+      },
+      "transition": "fade_out"
+    }
+  ],
+
+  "thumbnail": {
+    "source": "cad-spec.svg + main.jpg (split)",
+    "text_overlay": "₩{price}",
+    "size": "1280x720"
+  }
+}

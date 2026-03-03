@@ -1,0 +1,52 @@
+{
+  "$schema": "youtube-template.v1.0",
+  "series": "D",
+  "name": "실착 리뷰",
+  "resolution": "1080x1920",
+  "fps": 30,
+  "format": "mp4",
+
+  "structure": [
+    {
+      "scene": "unboxing",
+      "duration": "15s",
+      "content": "택배 개봉",
+      "source": "촬영 영상 (수동)",
+      "transition": "cut"
+    },
+    {
+      "scene": "try_on",
+      "duration": "30-60s",
+      "content": "착용 — 전신/반신/클로즈업",
+      "source": "촬영 영상 + main.jpg",
+      "transition": "cut",
+      "bgm": "lyria3/shorts/"
+    },
+    {
+      "scene": "styling",
+      "duration": "60-120s",
+      "content": "코디 3세트",
+      "source": "lookbook.jpg + detail-*.jpg",
+      "transition": "slide",
+      "text_overlay": "코디 번호 + 아이템 정보"
+    },
+    {
+      "scene": "verdict",
+      "duration": "15s",
+      "content": "총평 + 구매 링크",
+      "overlay": {
+        "rating": true,
+        "price": true,
+        "coupang_url": true,
+        "naver_url": true
+      },
+      "transition": "fade_out"
+    }
+  ],
+
+  "thumbnail": {
+    "source": "main.jpg (착용컷)",
+    "text_overlay": "상품명 + 가격",
+    "size": "1280x720"
+  }
+}

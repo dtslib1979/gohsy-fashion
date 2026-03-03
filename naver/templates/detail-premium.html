@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{name}} — gohsy</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Pretendard', -apple-system, sans-serif; color: #fff; background: #0a0a0a; max-width: 860px; margin: 0 auto; }
+
+  /* Naver Premium: 다크 모드 + 시네마틱 */
+
+  .hero { width: 100%; text-align: center; padding: 32px 0 0; }
+  .hero img { width: 92%; max-width: 760px; height: auto; display: inline-block; }
+
+  .info-bar { padding: 32px 24px; text-align: center; }
+  .info-bar .brand { font-size: 10px; color: #00C73C; text-transform: uppercase; letter-spacing: 3px; font-weight: 600; }
+  .info-bar h1 { font-size: 24px; font-weight: 300; margin: 12px 0; letter-spacing: 1px; }
+  .info-bar .price { font-size: 28px; font-weight: 200; }
+  .info-bar .price-retail { font-size: 13px; color: #555; text-decoration: line-through; margin-left: 10px; }
+  .info-bar .season { display: inline-block; font-size: 10px; border: 1px solid #1a3d1a; padding: 4px 14px; color: #00C73C; letter-spacing: 2px; margin-top: 12px; }
+
+  .naver-benefits { padding: 16px 24px; background: #111; text-align: center; }
+  .naver-benefits .benefit { font-size: 12px; color: #666; padding: 3px 0; }
+  .naver-benefits .benefit em { color: #00C73C; font-style: normal; }
+
+  .divider { height: 1px; background: linear-gradient(90deg, transparent, #222, transparent); margin: 0 24px; }
+
+  .options { padding: 24px; text-align: center; }
+  .options h3 { font-size: 10px; color: #555; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 12px; }
+  .size-chip { display: inline-block; border: 1px solid #333; padding: 8px 20px; font-size: 12px; margin: 0 4px 8px 0; color: #ccc; }
+  .color-chip { display: inline-block; padding: 8px 18px; font-size: 11px; background: #1a1a1a; border: 1px solid #333; margin: 0 4px 8px 0; text-transform: uppercase; color: #aaa; }
+
+  .section-title { font-size: 10px; text-align: center; color: #555; text-transform: uppercase; letter-spacing: 3px; padding: 32px 0 16px; }
+
+  .detail-image { width: 100%; margin-bottom: 2px; }
+  .detail-image img { width: 100%; height: auto; display: block; }
+
+  .lookbook-section img { width: 100%; height: auto; display: block; }
+
+  .webtoon-section { padding: 32px 0; background: #111; text-align: center; }
+  .webtoon-section img { width: 80%; max-width: 600px; height: auto; display: inline-block; }
+
+  .spec-section { padding: 32px 24px; }
+  .spec-table { width: 100%; border-collapse: collapse; }
+  .spec-table th { text-align: left; padding: 12px 16px; background: #111; border-bottom: 1px solid #1a1a1a; font-size: 12px; color: #555; width: 90px; font-weight: 400; }
+  .spec-table td { padding: 12px 16px; border-bottom: 1px solid #1a1a1a; font-size: 13px; color: #ccc; }
+
+  .cad-section { padding: 32px 24px; text-align: center; background: #0f0f0f; }
+  .cad-section img { max-width: 100%; height: auto; filter: invert(0.85); }
+
+  .tags { padding: 16px 24px; font-size: 11px; color: #444; text-align: center; }
+
+  .detail-footer { padding: 40px 24px; text-align: center; }
+  .detail-footer .brand-name { font-size: 20px; font-weight: 200; letter-spacing: 6px; }
+  .detail-footer .tagline { font-size: 10px; color: #444; margin-top: 6px; letter-spacing: 2px; }
+  .detail-footer a { color: #555; text-decoration: none; font-size: 11px; border-bottom: 1px solid #333; padding-bottom: 2px; }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <img src="{{main_image}}" alt="{{name}}">
+</div>
+
+<div class="info-bar">
+  <div class="brand">gohsy</div>
+  <h1>{{name}}</h1>
+  <div>
+    <span class="price">{{price_naver}}</span>
+    <span class="price-retail">{{price_retail}}</span>
+  </div>
+  <div class="season">{{season}}</div>
+</div>
+
+<div class="naver-benefits">
+  <div class="benefit"><em>네이버페이</em> 포인트 적립</div>
+  <div class="benefit"><em>무료배송</em> · 당일출고</div>
+</div>
+
+<div class="divider"></div>
+
+<div class="options">
+  <h3>Size</h3>
+  <div>{{sizes}}</div>
+  <h3 style="margin-top:20px">Color</h3>
+  <div>{{colors}}</div>
+</div>
+
+<div class="divider"></div>
+
+<h2 class="section-title">Detail</h2>
+<div class="detail-section">
+{{detail_images}}
+</div>
+
+<h2 class="section-title">Lookbook</h2>
+<div class="lookbook-section">
+  <img src="{{lookbook_image}}" alt="{{name}} lookbook" loading="lazy">
+</div>
+
+<div class="webtoon-section">
+  <h2 class="section-title" style="padding-top:0">Story</h2>
+  <img src="{{webtoon_image}}" alt="{{name}} story" loading="lazy">
+</div>
+
+<h2 class="section-title">Specification</h2>
+<div class="spec-section">
+  <table class="spec-table">
+{{spec_table}}
+  </table>
+</div>
+
+<div class="cad-section">
+  <h2 class="section-title" style="padding-top:0">Technical</h2>
+  <img src="{{cad_image}}" alt="{{name}} CAD">
+</div>
+
+<div class="tags">{{tags}}</div>
+
+<div class="detail-footer">
+  <div class="brand-name">GOHSY</div>
+  <div class="tagline">wear the story</div>
+  <div style="margin-top:16px"><a href="{{showroom_url}}">Visit Showroom</a></div>
+</div>
+
+</body>
+</html>

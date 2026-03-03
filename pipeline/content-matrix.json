@@ -1,0 +1,87 @@
+{
+  "$schema": "content-matrix.v1.0",
+  "description": "콘텐츠 유형별 파이프라인 매핑",
+
+  "types": {
+    "real_model": {
+      "label": "실사 모델링",
+      "source_repo": "parksy-image",
+      "scripts": [
+        "scripts/render/bd_renderer.py",
+        "scripts/compose/broadcast_cut.py"
+      ],
+      "outputs": ["main.jpg", "detail-*.jpg", "lookbook.jpg"],
+      "channels": {
+        "coupang": "상품 메인/디테일 이미지",
+        "naver": "상품 메인/디테일 이미지",
+        "youtube": "시리즈 D (실착 리뷰)",
+        "showroom": "룩북 갤러리"
+      }
+    },
+    "webtoon": {
+      "label": "웹툰 캐릭터",
+      "source_repo": "parksy-image",
+      "scripts": [
+        "scripts/story/engine.js",
+        "scripts/compose/panel_composer.py",
+        "scripts/compose/webtoon_master_composer.py"
+      ],
+      "story_format": {
+        "structure": ["setup", "conflict", "reflection", "conclusion"],
+        "emotion_vector": "parksy_mind.yaml 기반",
+        "camera_angles": ["medium", "closeup", "full", "closeup"]
+      },
+      "outputs": ["webtoon.png", "episodes/*.png"],
+      "channels": {
+        "coupang": "웹툰 착용컷 상세페이지",
+        "naver": "웹툰 스토리텔링 상세페이지",
+        "youtube": "시리즈 A (옷 입는 웹툰)",
+        "showroom": "웹툰 연재 아카이브"
+      }
+    },
+    "fantasy": {
+      "label": "판타지 세계관",
+      "source_repo": "OrbitPrompt + parksy-image + parksy-audio",
+      "scripts": [
+        "OrbitPrompt: prompts/ (세계관 설계)",
+        "parksy-image: scripts/render/ (배경 렌더)",
+        "parksy-audio: lyria3/material/ambient/ (BGM)"
+      ],
+      "outputs": ["fantasy.jpg", "backgrounds/*.jpg"],
+      "channels": {
+        "coupang": "판타지 룩북 상세",
+        "naver": "감성 마케팅 상세",
+        "youtube": "시리즈 C (판타지 룩북)",
+        "showroom": "판타지 월드 몰입 경험"
+      }
+    },
+    "cad": {
+      "label": "CAD 도면",
+      "source_repo": "parksy-image",
+      "scripts": [
+        "scripts/cad/generate_svg.js",
+        "scripts/cad/generate_dxf.js",
+        "scripts/cad/generate_scad.py"
+      ],
+      "output_formats": ["svg", "dxf", "scad"],
+      "outputs": ["cad-spec.svg", "patterns/*.dxf"],
+      "channels": {
+        "coupang": "스펙시트 삽입",
+        "naver": "기술 스펙 상세",
+        "youtube": "시리즈 B (도면→옷장 타임랩스)",
+        "showroom": "기술 문서 아카이브"
+      }
+    }
+  },
+
+  "bgm_mapping": {
+    "source": "parksy-audio/lyria3/",
+    "mapper": "parksy-image/scripts/story/bgm_mapper.js",
+    "categories": {
+      "webtoon": "lyria3/webtoon/",
+      "shorts": "lyria3/shorts/",
+      "ambient": "lyria3/material/ambient/",
+      "jingle": "lyria3/jingle/"
+    }
+  }
+}

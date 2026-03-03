@@ -1,0 +1,95 @@
+{
+  "$schema": "video-spec.v1.0",
+  "description": "YouTube 영상 생성 규격 — 4시리즈",
+  "audio_source": "dtslib1979/parksy-audio",
+  "bgm_dir": "lyria3/",
+
+  "series": {
+    "A_webtoon_fashion": {
+      "name": "옷 입는 웹툰",
+      "template": "youtube/templates/webtoon-episode.json",
+      "frequency": "주 2회",
+      "duration": "3-5분",
+      "resolution": "1080x1920",
+      "content_type": "webtoon",
+      "source": "parksy-image/scripts/story/engine.js",
+      "bgm_category": "lyria3/webtoon/",
+      "structure": {
+        "intro": "캐릭터 등장 (3s)",
+        "story": "에피소드 전개 (2-4min)",
+        "product_reveal": "자연스러운 착용 (30s)",
+        "outro": "구매 링크 + 다음 예고 (15s)"
+      }
+    },
+    "B_cad_timelapse": {
+      "name": "도면에서 옷장까지",
+      "template": "youtube/templates/cad-timelapse.json",
+      "frequency": "주 1회",
+      "duration": "1-3분 (쇼츠)",
+      "resolution": "1080x1920",
+      "content_type": "cad",
+      "source": "parksy-image/scripts/cad/",
+      "bgm_category": "lyria3/shorts/",
+      "structure": {
+        "pattern": "CAD 도면 (5s)",
+        "process": "제작 과정 타임랩스 (30-90s)",
+        "result": "완성품 (10s)",
+        "price": "가격 + 링크 (5s)"
+      }
+    },
+    "C_fantasy_lookbook": {
+      "name": "판타지 룩북",
+      "template": "youtube/templates/fantasy-lookbook.json",
+      "frequency": "시즌당 1회",
+      "duration": "2-5분",
+      "resolution": "1920x1080",
+      "content_type": "fantasy",
+      "source": "OrbitPrompt + parksy-audio/lyria3/material/",
+      "bgm_category": "lyria3/material/ambient/",
+      "structure": {
+        "world_intro": "세계관 설정 (15s)",
+        "lookbook": "의상 6-10벌 시네마틱 (2-4min)",
+        "collection_cta": "컬렉션 링크 (15s)"
+      }
+    },
+    "D_real_review": {
+      "name": "실착 리뷰",
+      "template": "youtube/templates/real-review.json",
+      "frequency": "상품 출시마다",
+      "duration": "1-10분",
+      "resolution": "1080x1920",
+      "content_type": "real_model",
+      "source": "촬영 + parksy-image/scripts/compose/",
+      "bgm_category": "lyria3/shorts/",
+      "structure": {
+        "unboxing": "개봉 (15s)",
+        "try_on": "착용 (30-60s)",
+        "styling": "코디 3세트 (60-120s)",
+        "verdict": "총평 + 링크 (15s)"
+      }
+    }
+  },
+
+  "description_template": {
+    "format": "markdown",
+    "sections": [
+      "🛒 쿠팡 바로구매: {coupang_url}",
+      "🟢 네이버 스토어: {naver_url}",
+      "🏠 쇼룸: https://gohsy.com/lookbook/{product_id}",
+      "",
+      "📋 상품 정보",
+      "- {product_name}",
+      "- 가격: ₩{price}",
+      "- 사이즈: {sizes}",
+      "- 소재: {material}",
+      "",
+      "#gohsy #패션 #룩북 #{tags}"
+    ]
+  },
+
+  "thumbnail": {
+    "source": "parksy-image",
+    "size": "1280x720",
+    "output": "youtube/thumbnails/{product_id}-thumb.jpg"
+  }
+}

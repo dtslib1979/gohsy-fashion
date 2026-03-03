@@ -1,0 +1,37 @@
+{
+  "$schema": "shoot-brief.v1.0",
+  "description": "실사 모델 촬영/렌더링 브리프 템플릿",
+  "source": "parksy-image/scripts/render/bd_renderer.py",
+
+  "product": {
+    "product_id": "",
+    "name": "",
+    "category": "",
+    "color": ""
+  },
+
+  "shots": [
+    { "type": "main", "background": "white_studio", "crop": "center", "resolution": "1200x1600" },
+    { "type": "detail", "count": "3-10", "focus": "소재/디테일/라벨" },
+    { "type": "lookbook", "background": "lifestyle", "full_body": true }
+  ],
+
+  "styling": {
+    "coordination_sets": 3,
+    "accessories": [],
+    "notes": ""
+  },
+
+  "lighting": "soft_diffused",
+  "post_process": {
+    "color_correction": true,
+    "background_removal": false,
+    "retouching": "minimal"
+  },
+
+  "output_paths": {
+    "main": "catalog/products/{product_id}/main.jpg",
+    "detail": "catalog/products/{product_id}/detail-{n}.jpg",
+    "lookbook": "catalog/products/{product_id}/lookbook.jpg"
+  }
+}

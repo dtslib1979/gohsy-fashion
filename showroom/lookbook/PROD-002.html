@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>와이드 핏 카고 팬츠 — GOHSY</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0F0F0F;--surface:#1A1A1A;--card:#222;--accent:#E94560;--text:#F5F5F5;--dim:rgba(245,245,245,0.5);--border:rgba(255,255,255,0.06)}
+body{font-family:-apple-system,system-ui,'Noto Sans KR',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
+nav{padding:1rem 1.5rem;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:1rem}
+nav a{color:var(--dim);text-decoration:none;font-size:0.8rem}
+nav a:hover{color:var(--text)}
+.brand{font-size:1rem;font-weight:800;letter-spacing:0.1em}
+.brand span{color:var(--accent)}
+.product{max-width:800px;margin:0 auto;padding:2rem 1.5rem}
+.hero-img{width:100%;aspect-ratio:3/4;background:var(--card);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:5rem;margin-bottom:2rem}
+.badge{display:inline-block;font-size:0.65rem;padding:0.3rem 0.7rem;background:rgba(233,69,96,0.15);color:var(--accent);border-radius:4px;margin-bottom:0.5rem}
+h1{font-size:1.6rem;font-weight:700;margin-bottom:0.3rem}
+.name-en{font-size:0.85rem;color:var(--dim);margin-bottom:1rem}
+.price{font-size:1.8rem;font-weight:800;color:var(--accent);margin-bottom:1.5rem}
+.colors{display:flex;gap:0.5rem;margin-bottom:2rem}
+.color-opt{width:32px;height:32px;border-radius:50%;border:2px solid var(--border);cursor:pointer;transition:border-color 0.2s}
+.color-opt:hover,.color-opt.sel{border-color:var(--accent)}
+.spec-table{width:100%;border-collapse:collapse;margin-bottom:2rem}
+.spec-table td{padding:0.6rem 0;font-size:0.85rem;border-bottom:1px solid var(--border)}
+.spec-table td:first-child{color:var(--dim);width:100px}
+.sizes{display:flex;gap:0.5rem;margin-bottom:2rem}
+.size-btn{padding:0.5rem 1rem;border:1px solid var(--border);border-radius:6px;background:transparent;color:var(--dim);font-size:0.8rem;cursor:pointer;transition:all 0.2s}
+.size-btn:hover,.size-btn.sel{border-color:var(--accent);color:var(--accent)}
+.channels{display:flex;gap:0.8rem;flex-wrap:wrap;margin-bottom:2rem}
+.ch-link{padding:0.6rem 1.2rem;border:1px solid var(--border);border-radius:8px;font-size:0.8rem;color:var(--dim);text-decoration:none;transition:all 0.2s}
+.ch-link.pending{opacity:0.5;pointer-events:none}
+.filming{background:var(--surface);border-radius:8px;padding:1.2rem;margin-bottom:2rem}
+.filming h3{font-size:0.75rem;color:var(--accent);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.6rem}
+.filming li{font-size:0.8rem;color:var(--dim);margin-left:1.2rem;margin-bottom:0.3rem}
+footer{text-align:center;padding:3rem 1.5rem;font-size:0.65rem;color:var(--dim);border-top:1px solid var(--border);margin-top:2rem}
+</style>
+</head>
+<body>
+<nav>
+  <div class="brand">GO<span>H</span>SY</div>
+  <a href="../index.html">← Showroom</a>
+</nav>
+<div class="product">
+  <div class="hero-img">👖</div>
+  <span class="badge">SS2026</span>
+  <h1>와이드 핏 카고 팬츠</h1>
+  <p class="name-en">Wide Fit Cargo Pants</p>
+  <div class="price">₩39,900</div>
+
+  <div class="colors">
+    <div class="color-opt sel" style="background:#222" title="black"></div>
+    <div class="color-opt" style="background:#BDB76B" title="khaki"></div>
+    <div class="color-opt" style="background:#F5F5DC" title="beige"></div>
+  </div>
+
+  <div class="sizes">
+    <button class="size-btn">S</button>
+    <button class="size-btn sel">M</button>
+    <button class="size-btn">L</button>
+    <button class="size-btn">XL</button>
+  </div>
+
+  <table class="spec-table">
+    <tr><td>소재</td><td>면 100%</td></tr>
+    <tr><td>무게</td><td>420g</td></tr>
+    <tr><td>원산지</td><td>한국</td></tr>
+    <tr><td>세탁</td><td>세탁기 가능 (찬물)</td></tr>
+  </table>
+
+  <div class="channels">
+    <a class="ch-link pending" href="#">🛒 쿠팡 — 준비 중</a>
+    <a class="ch-link pending" href="#">🟢 네이버 — 준비 중</a>
+    <a class="ch-link pending" href="#">▶️ YouTube — 준비 중</a>
+  </div>
+
+  <div class="filming">
+    <h3>Filming Points</h3>
+    <ul>
+      <li>포켓 디테일</li>
+      <li>실루엣 측면샷</li>
+      <li>소재 텍스쳐</li>
+      <li>코디 추천</li>
+    </ul>
+  </div>
+</div>
+<footer>GOHSY — PROD-002 · gohsy-fashion slot #9</footer>
+</body>
+</html>

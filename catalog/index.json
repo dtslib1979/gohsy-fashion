@@ -1,26 +1,41 @@
 {
-  "$schema": "catalog-index.v1.0",
-  "$dummy": true,
-
-  "total": 1,
-  "categories": ["캐주얼"],
-  "seasons": ["SS"],
-
+  "$schema": "catalog.v1.0",
+  "updated": "2026-03-03",
+  "brand": "gohsy",
+  "total_products": 3,
   "products": [
     {
       "id": "PROD-001",
-      "name": "오버사이즈 옥스포드 셔츠 (화이트)",
-      "category": "캐주얼",
-      "season": "SS",
-      "price_retail": 39000,
-      "card_path": "catalog/products/PROD-001/card.json",
-      "channels_live": 0,
-      "status": "pending"
+      "name": "오버사이즈 니트 가디건",
+      "name_en": "Oversized Knit Cardigan",
+      "category": "outer/cardigan",
+      "season": "FW2026",
+      "price": 49900,
+      "colors": ["ivory", "charcoal", "camel"],
+      "state": "SPEC_READY",
+      "card": "products/PROD-001/card.json"
+    },
+    {
+      "id": "PROD-002",
+      "name": "와이드 핏 카고 팬츠",
+      "name_en": "Wide Fit Cargo Pants",
+      "category": "bottom/pants",
+      "season": "SS2026",
+      "price": 39900,
+      "colors": ["black", "khaki", "beige"],
+      "state": "SPEC_READY",
+      "card": "products/PROD-002/card.json"
+    },
+    {
+      "id": "PROD-003",
+      "name": "미니멀 크로스백",
+      "name_en": "Minimal Crossbody Bag",
+      "category": "acc/bag",
+      "season": "ALL",
+      "price": 29900,
+      "colors": ["black", "cream", "olive"],
+      "state": "SPEC_READY",
+      "card": "products/PROD-003/card.json"
     }
-  ],
-
-  "meta": {
-    "updated_at": "2026-03-03",
-    "generated_by": "dummy-wafer"
-  }
+  ]
 }

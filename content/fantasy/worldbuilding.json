@@ -1,0 +1,37 @@
+{
+  "$schema": "worldbuilding.v1.0",
+  "description": "판타지 세계관 룩북 설정 템플릿",
+  "source": "OrbitPrompt prompts/ + parksy-image + parksy-audio",
+
+  "world": {
+    "name": "",
+    "setting": "",
+    "era": "",
+    "mood": "cinematic | ethereal | dark_fantasy",
+    "color_palette": []
+  },
+
+  "fashion_context": {
+    "culture": "",
+    "dress_code": "",
+    "signature_material": "",
+    "silhouette": ""
+  },
+
+  "scenes": [
+    {
+      "id": "scene-01",
+      "location": "",
+      "lighting": "golden_hour | moonlight | overcast | torchlight",
+      "products": [],
+      "camera": "wide",
+      "bgm": "lyria3/material/ambient/"
+    }
+  ],
+
+  "output": {
+    "backgrounds": "content/fantasy/backgrounds/",
+    "composites": "catalog/products/{product_id}/fantasy.jpg",
+    "resolution": "1920x1080"
+  }
+}

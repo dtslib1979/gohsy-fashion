@@ -1,0 +1,28 @@
+{
+  "$schema": "character-template.v1.0",
+  "description": "웹툰 캐릭터 착용 에피소드 템플릿",
+  "source_engine": "parksy-image/scripts/story/engine.js",
+
+  "character": {
+    "name": "",
+    "style": "fashion_lookbook",
+    "base_emotion": { "joy": 0.6, "neutral": 0.3, "surprise": 0.1 }
+  },
+
+  "episode": {
+    "structure": [
+      { "cut": 1, "phase": "setup", "camera": "medium", "desc": "캐릭터 등장 + 상황 설정" },
+      { "cut": 2, "phase": "conflict", "camera": "closeup", "desc": "옷 고민/도전" },
+      { "cut": 3, "phase": "reflection", "camera": "full", "desc": "착용 + 거울 확인" },
+      { "cut": 4, "phase": "conclusion", "camera": "closeup", "desc": "만족 표정 + 외출" }
+    ],
+    "product_placement": "cut 3-4 자연스러운 착용",
+    "text_bubbles": true
+  },
+
+  "output": {
+    "format": "png",
+    "resolution": "1080x1920",
+    "panels": "vertical_scroll"
+  }
+}

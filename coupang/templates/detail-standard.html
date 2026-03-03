@@ -1,46 +1,123 @@
 <!DOCTYPE html>
-<!--
-  쿠팡 상세페이지 표준 템플릿 (더미 웨이퍼)
-  GPU 렌더러가 PRODUCT_CARD.json 데이터로 이 템플릿을 채운다.
-  수동 편집 금지 — gpu/detail-renderer 가 생성.
--->
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <title>{{product.name}} | GOHSY</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{name}} — gohsy</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Pretendard', -apple-system, sans-serif; color: #222; background: #fff; max-width: 860px; margin: 0 auto; }
+
+  /* Hero */
+  .hero { width: 100%; text-align: center; padding: 0; }
+  .hero img { width: 100%; height: auto; display: block; }
+
+  /* Info Bar */
+  .info-bar { padding: 24px 20px; border-bottom: 1px solid #eee; }
+  .info-bar .brand { font-size: 12px; color: #999; text-transform: uppercase; letter-spacing: 1px; }
+  .info-bar h1 { font-size: 22px; font-weight: 700; margin: 6px 0; line-height: 1.4; }
+  .info-bar .price { font-size: 28px; font-weight: 800; color: #e44; margin: 8px 0; }
+  .info-bar .price-retail { font-size: 14px; color: #aaa; text-decoration: line-through; margin-left: 8px; }
+  .info-bar .season { display: inline-block; font-size: 11px; background: #f5f5f5; padding: 3px 10px; border-radius: 12px; color: #666; }
+
+  /* Options */
+  .options { padding: 20px; }
+  .options h3 { font-size: 14px; color: #666; margin-bottom: 10px; }
+  .size-chip { display: inline-block; border: 1px solid #ddd; padding: 6px 16px; border-radius: 4px; font-size: 13px; margin: 0 4px 4px 0; }
+  .color-chip { display: inline-block; padding: 6px 14px; border-radius: 20px; font-size: 12px; background: #f0f0f0; margin: 0 4px 4px 0; text-transform: capitalize; }
+
+  /* Detail Images */
+  .detail-section { padding: 0; }
+  .detail-section h2 { font-size: 16px; padding: 20px; color: #333; }
+  .detail-image { width: 100%; }
+  .detail-image img { width: 100%; height: auto; display: block; }
+
+  /* Spec Table */
+  .spec-section { padding: 20px; }
+  .spec-section h2 { font-size: 16px; color: #333; margin-bottom: 16px; }
+  .spec-table { width: 100%; border-collapse: collapse; }
+  .spec-table th { text-align: left; padding: 10px 12px; background: #f8f8f8; border: 1px solid #eee; font-size: 13px; color: #666; width: 100px; }
+  .spec-table td { padding: 10px 12px; border: 1px solid #eee; font-size: 13px; }
+
+  /* CAD */
+  .cad-section { padding: 20px; text-align: center; background: #fafafa; }
+  .cad-section h2 { font-size: 16px; color: #333; margin-bottom: 16px; }
+  .cad-section img { max-width: 100%; height: auto; }
+
+  /* Footer */
+  .detail-footer { padding: 24px 20px; text-align: center; background: #111; color: #fff; }
+  .detail-footer .brand-name { font-size: 18px; font-weight: 700; letter-spacing: 2px; }
+  .detail-footer .links { margin-top: 12px; font-size: 12px; color: #888; }
+  .detail-footer a { color: #aaa; text-decoration: none; }
+
+  /* Tags */
+  .tags { padding: 16px 20px; font-size: 12px; color: #999; }
+</style>
 </head>
 <body>
-  <section class="hero">
-    <img src="{{images.main}}" alt="{{product.name}} 메인 이미지">
-    <h1>{{product.name}}</h1>
-    <p class="price">₩{{price.coupang}}</p>
-  </section>
 
-  <section class="detail-images">
-    <!-- {{#each images.detail}} -->
-    <img src="{{this}}" alt="상세 이미지">
-    <!-- {{/each}} -->
-  </section>
+<!-- Hero Image -->
+<div class="hero">
+  <img src="{{main_image}}" alt="{{name}}">
+</div>
 
-  <section class="style-guide">
-    <h2>코디 가이드</h2>
-    <p>스타일 공식: {{style_module.context}}</p>
-    <p>실루엣: {{style_module.variables.silhouette_type}}</p>
-  </section>
+<!-- Info -->
+<div class="info-bar">
+  <div class="brand">{{brand}}</div>
+  <h1>{{name}}</h1>
+  <div>
+    <span class="price">{{price_coupang}}</span>
+    <span class="price-retail">{{price_retail}}</span>
+  </div>
+  <span class="season">{{season}}</span>
+</div>
 
-  <section class="spec">
-    <h2>상품 정보</h2>
-    <table>
-      <tr><td>소재</td><td>{{spec.material}}</td></tr>
-      <tr><td>사이즈</td><td>{{spec.sizes}}</td></tr>
-      <tr><td>컬러</td><td>{{spec.colors}}</td></tr>
-      <tr><td>원산지</td><td>{{spec.origin}}</td></tr>
-    </table>
-  </section>
+<!-- Options -->
+<div class="options">
+  <h3>사이즈</h3>
+  <div>{{sizes}}</div>
+  <h3 style="margin-top:16px">컬러</h3>
+  <div>{{colors}}</div>
+</div>
 
-  <footer>
-    <p>GOHSY FASHION | gohsy.com</p>
-    <p class="ai-notice">AI 스타일링 이미지 포함</p>
-  </footer>
+<!-- Detail Images -->
+<div class="detail-section">
+  <h2>상세 이미지</h2>
+{{detail_images}}
+</div>
+
+<!-- Lookbook -->
+<div class="detail-section">
+  <h2>룩북</h2>
+  <div class="detail-image">
+    <img src="{{lookbook_image}}" alt="{{name}} 룩북" loading="lazy">
+  </div>
+</div>
+
+<!-- Spec Table -->
+<div class="spec-section">
+  <h2>상품 정보</h2>
+  <table class="spec-table">
+{{spec_table}}
+  </table>
+</div>
+
+<!-- CAD (optional) -->
+<div class="cad-section">
+  <h2>기술 도면</h2>
+  <img src="{{cad_image}}" alt="{{name}} CAD">
+</div>
+
+<!-- Tags -->
+<div class="tags">{{tags}}</div>
+
+<!-- Footer -->
+<div class="detail-footer">
+  <div class="brand-name">GOHSY</div>
+  <div class="links">
+    <a href="{{showroom_url}}">쇼룸 보기</a>
+  </div>
+</div>
+
 </body>
 </html>

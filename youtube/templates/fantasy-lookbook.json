@@ -1,0 +1,43 @@
+{
+  "$schema": "youtube-template.v1.0",
+  "series": "C",
+  "name": "판타지 룩북",
+  "resolution": "1920x1080",
+  "fps": 30,
+  "format": "mp4",
+
+  "structure": [
+    {
+      "scene": "world_intro",
+      "duration": "15s",
+      "content": "세계관 설정 — 판타지 배경 시네마틱",
+      "source": "content/fantasy/backgrounds/",
+      "transition": "slow_zoom",
+      "bgm": "lyria3/material/ambient/"
+    },
+    {
+      "scene": "lookbook",
+      "duration": "120-240s",
+      "content": "의상 6-10벌 시네마틱 컷",
+      "source": "fantasy.jpg + main.jpg (per product)",
+      "transition": "cinematic_cut",
+      "camera": ["wide", "medium", "closeup", "dolly"]
+    },
+    {
+      "scene": "collection_cta",
+      "duration": "15s",
+      "content": "컬렉션 링크 + 쇼룸 안내",
+      "overlay": {
+        "showroom_url": true,
+        "collection_name": true
+      },
+      "transition": "fade_out"
+    }
+  ],
+
+  "thumbnail": {
+    "source": "fantasy.jpg (best shot)",
+    "text_overlay": "시즌 컬렉션명",
+    "size": "1280x720"
+  }
+}
