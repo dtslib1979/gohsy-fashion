@@ -1,0 +1,48 @@
+/* GOHSY Fashion TV — CH3 COSTUME */
+.costume-hero{position:relative;height:100vh;height:100dvh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding-top:var(--nav-h);overflow:hidden}
+.costume-hero__channel{font-size:var(--text-micro);font-weight:var(--w-medium);letter-spacing:var(--ls-widest);text-transform:uppercase;color:var(--ch3);margin-bottom:var(--sp-4);animation:fadeIn 0.8s var(--ease-out) 0.3s both}
+.costume-hero__title{font-size:var(--text-display);font-weight:var(--w-black);letter-spacing:var(--ls-tight);line-height:0.85;text-transform:uppercase;color:transparent;-webkit-text-stroke:1.5px var(--text);animation:fadeIn 1s var(--ease-out) 0.5s both}
+.costume-hero__sub{font-size:var(--text-body);font-weight:var(--w-light);color:var(--text-2);margin-top:var(--sp-6);letter-spacing:var(--ls-wide);animation:fadeIn 0.8s var(--ease-out) 0.8s both}
+
+/* ── Character Profile ── */
+.character{border-top:1px solid var(--border);padding:var(--sp-24) 0}
+.character__profile{display:grid;grid-template-columns:1fr 1fr;min-height:70vh;border-bottom:1px solid var(--border)}
+.character__portrait{position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;background:var(--surface)}
+.character__bio{display:flex;flex-direction:column;justify-content:center;padding:var(--sp-12)}
+.character__label{font-size:var(--text-micro);font-weight:var(--w-medium);letter-spacing:var(--ls-widest);text-transform:uppercase;color:var(--ch3);margin-bottom:var(--sp-6)}
+.character__name{font-size:var(--text-hero);font-weight:var(--w-bold);letter-spacing:var(--ls-tight);line-height:var(--lh-tight);margin-bottom:var(--sp-3)}
+.character__name-en{font-size:var(--text-small);color:var(--text-3);font-weight:var(--w-light);margin-bottom:var(--sp-6)}
+.character__desc{font-size:var(--text-body);font-weight:var(--w-light);line-height:var(--lh-relaxed);color:var(--text-2);max-width:400px;margin-bottom:var(--sp-8)}
+.character__tags{display:flex;gap:var(--sp-2);flex-wrap:wrap}
+.character__tag{padding:var(--sp-1) var(--sp-3);border:1px solid var(--border);font-size:var(--text-micro);font-weight:var(--w-medium);letter-spacing:var(--ls-wide);color:var(--text-3);transition:all var(--dur-fast) ease}
+.character__tag:hover{border-color:var(--ch3);color:var(--ch3)}
+@media(max-width:768px){.character__profile{grid-template-columns:1fr;min-height:auto}.character__portrait{min-height:50vh}.character__bio{padding:var(--sp-8) var(--gutter)}.character__name{font-size:var(--text-h1)}}
+
+/* ── Outfit Set ── */
+.outfit-set{max-width:800px;margin:0 auto;padding:var(--sp-12) var(--gutter)}
+.outfit-set__title{font-size:var(--text-micro);font-weight:var(--w-medium);letter-spacing:var(--ls-widest);text-transform:uppercase;color:var(--text-3);margin-bottom:var(--sp-8);text-align:center}
+.outfit-set__items{display:flex;flex-direction:column}
+.outfit-item{display:grid;grid-template-columns:120px 1fr;gap:var(--sp-6);align-items:center;padding:var(--sp-6) 0;border-bottom:1px solid var(--border);transition:all var(--dur-fast) ease;text-decoration:none;color:inherit;position:relative}
+.outfit-item:hover{background:var(--surface);margin:0 calc(-1*var(--sp-4));padding-left:var(--sp-4);padding-right:var(--sp-4);border-radius:var(--r-md)}
+.outfit-item__image{width:120px;aspect-ratio:3/4;background:var(--surface);border-radius:var(--r-sm);display:flex;align-items:center;justify-content:center;font-size:2rem;overflow:hidden}
+.outfit-item__info{min-width:0}
+.outfit-item__layer{font-size:var(--text-micro);font-weight:var(--w-medium);letter-spacing:var(--ls-widest);text-transform:uppercase;color:var(--text-3);display:block;margin-bottom:var(--sp-1)}
+.outfit-item__name{font-size:var(--text-body);font-weight:var(--w-light);display:block;margin-bottom:var(--sp-1)}
+.outfit-item__price{font-size:var(--text-body);font-weight:var(--w-medium);display:block}
+.outfit-item__line{position:absolute;left:60px;bottom:-13px;width:1px;height:24px;background:var(--border);z-index:1}
+@media(max-width:768px){.outfit-item{grid-template-columns:80px 1fr;gap:var(--sp-4)}.outfit-item__image{width:80px}.outfit-item__line{left:40px}}
+
+.outfit-set__total{display:flex;align-items:center;justify-content:space-between;padding:var(--sp-8) 0;border-top:2px solid var(--text);margin-top:var(--sp-4)}
+.outfit-set__total-label{font-size:var(--text-small);font-weight:var(--w-medium);letter-spacing:var(--ls-wide);text-transform:uppercase;color:var(--text-2)}
+.outfit-set__total-price{font-size:var(--text-h2);font-weight:var(--w-bold)}
+@media(max-width:768px){.outfit-set__total{flex-direction:column;gap:var(--sp-3);text-align:center}}
+
+/* ── Character Grid ── */
+.char-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1px;background:var(--border);margin-top:var(--sp-10)}
+.char-thumb{background:var(--bg);padding:var(--sp-8);display:flex;flex-direction:column;min-height:280px;transition:background var(--dur-fast) ease;cursor:pointer;text-decoration:none;color:inherit}
+.char-thumb:hover{background:var(--surface)}
+.char-thumb__image{flex:1;background:var(--surface);border-radius:var(--r-sm);margin-bottom:var(--sp-4);overflow:hidden;display:flex;align-items:center;justify-content:center}
+.char-thumb__name{font-size:var(--text-body);font-weight:var(--w-bold);margin-bottom:var(--sp-1);transition:color var(--dur-fast) ease}
+.char-thumb:hover .char-thumb__name{color:var(--ch3)}
+.char-thumb__items{font-size:var(--text-xs);color:var(--text-3)}
+.char-thumb--locked{opacity:0.3;pointer-events:none}

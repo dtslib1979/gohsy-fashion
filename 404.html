@@ -1,43 +1,27 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>404 | GOHSY</title>
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: 'Pretendard', -apple-system, sans-serif;
-      background: #0a0a0a;
-      color: #fff;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 20px;
-    }
-    .code { font-size: 120px; font-weight: 200; color: #333; line-height: 1; letter-spacing: 8px; }
-    .message { font-size: 20px; margin: 24px 0 8px; font-weight: 300; }
-    .sub { color: #555; margin-bottom: 32px; font-size: 14px; }
-    .btn {
-      color: #fff;
-      padding: 12px 32px;
-      border: 1px solid #333;
-      text-decoration: none;
-      font-size: 13px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      transition: border-color 0.2s;
-    }
-    .btn:hover { border-color: #888; }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>404 — GOHSY Fashion TV</title>
+<meta name="theme-color" content="#0a0a0a">
+<link rel="icon" href="assets/brand/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="styles/tokens.css">
+<link rel="stylesheet" href="styles/reset.css">
+<link rel="stylesheet" href="styles/components.css">
+<link rel="stylesheet" href="styles/animations.css">
 </head>
-<body>
-  <div class="code">404</div>
-  <div class="message">페이지를 찾을 수 없습니다</div>
-  <div class="sub">GOHSY — wear the story</div>
-  <a href="/" class="btn">쇼룸으로</a>
+<body style="display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;text-align:center;padding:var(--gutter)">
+
+<div class="outline-text" style="font-size:clamp(6rem,20vw,14rem);margin-bottom:var(--sp-6);animation:fadeIn 1s var(--ease-out) both">404</div>
+<h1 style="font-size:var(--text-h2);font-weight:var(--w-light);margin-bottom:var(--sp-4);animation:fadeIn 0.8s var(--ease-out) 0.3s both">페이지를 찾을 수 없습니다</h1>
+<p style="font-size:var(--text-body);color:var(--text-3);font-weight:var(--w-light);margin-bottom:var(--sp-10);animation:fadeIn 0.8s var(--ease-out) 0.5s both">요청하신 상품 또는 페이지가 존재하지 않습니다</p>
+<div style="display:flex;gap:var(--sp-3);animation:fadeIn 0.8s var(--ease-out) 0.7s both">
+  <a href="/" class="btn btn--accent"><span>홈으로</span></a>
+  <a href="showroom/" class="btn"><span>쇼룸 가기</span></a>
+</div>
+
 </body>
 </html>

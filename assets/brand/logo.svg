@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 120" class="gohsy-logo">
+  <defs>
+    <style>
+      @keyframes wheel-spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+      .wheel-spokes { transform-origin: 210px 60px; animation: wheel-spin 20s linear infinite; }
+      .throne-glow { filter: drop-shadow(0 0 6px rgba(255,45,85,0.3)); }
+    </style>
+  </defs>
+
+  <!-- G — Forward momentum, italic lean -->
+  <g transform="translate(0,0)">
+    <path d="M72 16C52 16 36 32 36 56C36 80 52 96 72 96C88 96 100 86 104 72H76V64H116V72C112 92 94 108 72 108C44 108 22 86 22 56C22 26 44 4 72 4C92 4 108 16 114 34L102 38C98 24 86 16 72 16Z"
+          fill="currentColor" opacity="0.95"/>
+  </g>
+
+  <!-- O — The Wheel (바퀴) -->
+  <g transform="translate(120,0)">
+    <!-- Outer rim -->
+    <circle cx="54" cy="56" r="52" stroke="currentColor" stroke-width="5" fill="none" opacity="0.95"/>
+    <!-- Hub -->
+    <circle cx="54" cy="56" r="8" fill="#ff2d55"/>
+    <!-- Inner rim -->
+    <circle cx="54" cy="56" r="20" stroke="currentColor" stroke-width="1.5" fill="none" opacity="0.25"/>
+    <!-- Spokes (rotating) -->
+    <g class="wheel-spokes" style="transform-origin:174px 56px">
+      <line x1="54" y1="8" x2="54" y2="36" stroke="currentColor" stroke-width="2" opacity="0.4"/>
+      <line x1="54" y1="76" x2="54" y2="104" stroke="currentColor" stroke-width="2" opacity="0.4"/>
+      <line x1="6" y1="56" x2="34" y2="56" stroke="currentColor" stroke-width="2" opacity="0.4"/>
+      <line x1="74" y1="56" x2="102" y2="56" stroke="currentColor" stroke-width="2" opacity="0.4"/>
+      <line x1="20" y1="22" x2="40" y2="42" stroke="currentColor" stroke-width="1.5" opacity="0.25"/>
+      <line x1="68" y1="70" x2="88" y2="90" stroke="currentColor" stroke-width="1.5" opacity="0.25"/>
+      <line x1="88" y1="22" x2="68" y2="42" stroke="currentColor" stroke-width="1.5" opacity="0.25"/>
+      <line x1="40" y1="70" x2="20" y2="90" stroke="currentColor" stroke-width="1.5" opacity="0.25"/>
+    </g>
+  </g>
+
+  <!-- H — The Throne (왕좌) -->
+  <g transform="translate(240,0)" class="throne-glow">
+    <!-- Left pillar -->
+    <rect x="16" y="4" width="8" height="104" rx="2" fill="currentColor" opacity="0.95"/>
+    <!-- Right pillar -->
+    <rect x="80" y="4" width="8" height="104" rx="2" fill="currentColor" opacity="0.95"/>
+    <!-- Seat (crossbar) — accent color, thicker = throne seat -->
+    <rect x="12" y="48" width="80" height="10" rx="2" fill="#ff2d55"/>
+    <!-- Armrests extending outward -->
+    <path d="M12 48C6 48 2 44 2 38L2 36" stroke="#ff2d55" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <path d="M92 48C98 48 102 44 102 38L102 36" stroke="#ff2d55" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <!-- Crown ornament top-left -->
+    <path d="M14 4L20 -8L26 4" stroke="#ff2d55" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="20" cy="-10" r="2" fill="#ff2d55"/>
+    <!-- Crown ornament top-right -->
+    <path d="M78 4L84 -8L90 4" stroke="#ff2d55" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="84" cy="-10" r="2" fill="#ff2d55"/>
+    <!-- Backrest decoration -->
+    <line x1="24" y1="10" x2="24" y2="44" stroke="currentColor" stroke-width="1.5" opacity="0.15"/>
+    <line x1="52" y1="10" x2="52" y2="44" stroke="currentColor" stroke-width="1.5" opacity="0.15"/>
+    <line x1="80" y1="10" x2="80" y2="44" stroke="currentColor" stroke-width="1.5" opacity="0.15"/>
+  </g>
+
+  <!-- S — Elegant, thin weight -->
+  <g transform="translate(358,0)">
+    <path d="M68 24C68 12 56 4 42 4C28 4 16 12 16 26C16 40 28 44 42 48C56 52 68 56 68 70C68 84 56 96 42 96C26 96 14 86 14 72"
+          stroke="currentColor" stroke-width="5" fill="none" stroke-linecap="round" opacity="0.7"/>
+  </g>
+
+  <!-- Y — Light, adjective suffix -->
+  <g transform="translate(434,0)">
+    <path d="M8 4L44 60V96" stroke="currentColor" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.7"/>
+    <path d="M80 4L44 60" stroke="currentColor" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.7"/>
+  </g>
+</svg>

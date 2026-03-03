@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CH1 Story — GOHSY Fashion TV</title>
+<meta name="description" content="웹툰에서 현실로. Take On Me 트랜지션으로 만나는 패션 내러티브.">
+<meta name="theme-color" content="#0a0a0a">
+<link rel="icon" href="../assets/brand/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="../styles/tokens.css">
+<link rel="stylesheet" href="../styles/reset.css">
+<link rel="stylesheet" href="../styles/components.css">
+<link rel="stylesheet" href="../styles/animations.css">
+<link rel="stylesheet" href="../styles/story.css">
+</head>
+<body>
+
+<div class="loader" id="loader"><div class="loader__brand">CH1</div></div>
+
+<nav class="nav" id="nav">
+  <a href="../" class="nav__brand">gohsy</a>
+  <div class="nav__channels">
+    <a href="story.html" class="nav__ch is-active" data-ch="1">CH1 Story</a>
+    <a href="material.html" class="nav__ch" data-ch="2">CH2 Material</a>
+    <a href="costume.html" class="nav__ch" data-ch="3">CH3 Costume</a>
+    <a href="academy.html" class="nav__ch" data-ch="4">CH4 Academy</a>
+  </div>
+  <div class="nav__actions">
+    <a href="../showroom/" class="nav__link">Showroom</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="story-hero">
+  <span class="story-hero__channel">Channel 01</span>
+  <h1 class="story-hero__title">Story</h1>
+  <p class="story-hero__sub">웹툰에서 현실로 — Take On Me</p>
+  <div class="scroll-hint">
+    <span class="scroll-hint__line"></span>
+    <span class="scroll-hint__text">Scroll</span>
+  </div>
+</section>
+
+<!-- EP 01: 오버사이즈 니트 가디건 -->
+<article class="episode" id="ep01" data-product-id="PROD-001" data-product-name="오버사이즈 니트 가디건" data-product-price="49900" data-product-icon="🧥">
+
+  <!-- WEBTOON SECTION (Light) -->
+  <section class="webtoon" data-theme="light">
+    <div class="webtoon__header">
+      <span class="webtoon__ep">EP.01</span>
+      <h2 class="webtoon__title">겨울, 첫 만남</h2>
+    </div>
+    <div class="webtoon__cuts">
+      <div class="webtoon__cut webtoon__cut--warm reveal">
+        <div class="webtoon__panel">
+          <div class="webtoon__silhouette">🧥</div>
+          <p class="webtoon__caption">차가운 바람이 불던 날,<br>그녀는 오버사이즈 가디건을 걸쳤다.</p>
+        </div>
+      </div>
+      <div class="webtoon__cut webtoon__cut--cool reveal reveal-d1">
+        <div class="webtoon__panel">
+          <div class="webtoon__silhouette">☕</div>
+          <p class="webtoon__caption">카페 문을 열자<br>따뜻한 공기가 감쌌다.</p>
+        </div>
+      </div>
+      <div class="webtoon__cut webtoon__cut--warm reveal reveal-d2">
+        <div class="webtoon__panel">
+          <div class="webtoon__bubble">"그 가디건, 좋은데요."</div>
+          <div class="webtoon__silhouette">👤</div>
+        </div>
+      </div>
+      <div class="webtoon__cut webtoon__cut--reveal reveal reveal-d3">
+        <div class="webtoon__panel">
+          <div class="webtoon__silhouette" style="font-size:4rem">✨</div>
+          <p class="webtoon__caption">이야기는 그렇게 시작됐다.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TAKE ON ME TRANSITION -->
+  <div class="tom-transition bg-transition-trigger" data-bg-to="#0a0a0a" data-text-to="#fff">
+    <div class="take-on-me">
+      <div class="take-on-me__sketch">
+        <div class="tom-transition__sketch-inner">
+          <span class="tom-transition__label">Webtoon</span>
+          <span class="tom-transition__icon">✏️</span>
+        </div>
+      </div>
+      <div class="take-on-me__real">
+        <div class="tom-transition__real-inner">
+          <span class="tom-transition__label">Reality</span>
+          <span class="tom-transition__icon">📸</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- REAL SECTION (Dark) -->
+  <section class="real-section">
+    <div class="real-section__hero">
+      <div class="real-section__visual">
+        <div class="card__placeholder" style="height:100%;aspect-ratio:auto">
+          <span class="card__placeholder-icon" style="font-size:5rem">🧥</span>
+          <span class="card__placeholder-text">Oversized Knit Cardigan</span>
+        </div>
+      </div>
+      <div class="real-section__info">
+        <span class="real-section__ep">EP.01 Product</span>
+        <h3 class="real-section__name">오버사이즈 니트 가디건</h3>
+        <p class="real-section__name-en">Oversized Knit Cardigan</p>
+        <p class="real-section__desc">부드러운 울 블렌드 소재로 제작된 오버사이즈 핏 가디건. 떨어지는 숄더 라인과 여유로운 실루엣이 레이어링에 완벽합니다.</p>
+        <div class="real-section__price">₩49,900</div>
+        <div class="real-section__colors">
+          <button class="real-section__color is-active" style="--c:#FFFFF0" title="ivory"></button>
+          <button class="real-section__color" style="--c:#36454F" title="charcoal"></button>
+          <button class="real-section__color" style="--c:#C19A6B" title="camel"></button>
+        </div>
+        <div class="real-section__actions">
+          <a href="../showroom/lookbook/PROD-001.html" class="btn btn--accent btn--lg"><span>구매하기</span></a>
+          <a href="../showroom/lookbook/PROD-001.html" class="btn btn--lg"><span>상세보기</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+</article>
+
+<!-- EP 02: 와이드 핏 카고 팬츠 -->
+<article class="episode" id="ep02" data-product-id="PROD-002" data-product-name="와이드 핏 카고 팬츠" data-product-price="39900" data-product-icon="👖">
+
+  <section class="webtoon" data-theme="light">
+    <div class="webtoon__header">
+      <span class="webtoon__ep">EP.02</span>
+      <h2 class="webtoon__title">거리의 리듬</h2>
+    </div>
+    <div class="webtoon__cuts">
+      <div class="webtoon__cut webtoon__cut--cool reveal">
+        <div class="webtoon__panel">
+          <div class="webtoon__silhouette">🏙️</div>
+          <p class="webtoon__caption">새벽 도시의 빈 거리,<br>그의 발걸음이 리듬을 만든다.</p>
+        </div>
+      </div>
+      <div class="webtoon__cut webtoon__cut--warm reveal reveal-d1">
+        <div class="webtoon__panel">
+          <div class="webtoon__silhouette">👖</div>
+          <p class="webtoon__caption">와이드한 실루엣이<br>바람에 흔들린다.</p>
+        </div>
+      </div>
+      <div class="webtoon__cut webtoon__cut--dreamy reveal reveal-d2">
+        <div class="webtoon__panel">
+          <div class="webtoon__bubble">"자유로워 보인다."</div>
+          <div class="webtoon__silhouette">👤</div>
+        </div>
+      </div>
+      <div class="webtoon__cut webtoon__cut--reveal reveal reveal-d3">
+        <div class="webtoon__panel">
+          <div class="webtoon__silhouette" style="font-size:4rem">🌆</div>
+          <p class="webtoon__caption">옷이 걸음을 바꾼다.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="tom-transition bg-transition-trigger" data-bg-to="#0a0a0a" data-text-to="#fff">
+    <div class="take-on-me">
+      <div class="take-on-me__sketch">
+        <div class="tom-transition__sketch-inner">
+          <span class="tom-transition__label">Webtoon</span>
+          <span class="tom-transition__icon">✏️</span>
+        </div>
+      </div>
+      <div class="take-on-me__real">
+        <div class="tom-transition__real-inner">
+          <span class="tom-transition__label">Reality</span>
+          <span class="tom-transition__icon">📸</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="real-section">
+    <div class="real-section__hero">
+      <div class="real-section__visual">
+        <div class="card__placeholder" style="height:100%;aspect-ratio:auto">
+          <span class="card__placeholder-icon" style="font-size:5rem">👖</span>
+          <span class="card__placeholder-text">Wide Fit Cargo Pants</span>
+        </div>
+      </div>
+      <div class="real-section__info">
+        <span class="real-section__ep">EP.02 Product</span>
+        <h3 class="real-section__name">와이드 핏 카고 팬츠</h3>
+        <p class="real-section__name-en">Wide Fit Cargo Pants</p>
+        <p class="real-section__desc">밀리터리 감성의 카고 포켓 디테일과 와이드 핏이 결합된 팬츠. 스트릿 무드부터 캐주얼까지 다양한 스타일링이 가능합니다.</p>
+        <div class="real-section__price">₩39,900</div>
+        <div class="real-section__colors">
+          <button class="real-section__color is-active" style="--c:#222" title="black"></button>
+          <button class="real-section__color" style="--c:#BDB76B" title="khaki"></button>
+          <button class="real-section__color" style="--c:#F5F5DC" title="beige"></button>
+        </div>
+        <div class="real-section__actions">
+          <a href="../showroom/lookbook/PROD-002.html" class="btn btn--accent btn--lg"><span>구매하기</span></a>
+          <a href="../showroom/lookbook/PROD-002.html" class="btn btn--lg"><span>상세보기</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+</article>
+
+<!-- EP 03: 미니멀 크로스백 -->
+<article class="episode" id="ep03" data-product-id="PROD-003" data-product-name="미니멀 크로스백" data-product-price="29900" data-product-icon="👜">
+
+  <section class="webtoon" data-theme="light">
+    <div class="webtoon__header">
+      <span class="webtoon__ep">EP.03</span>
+      <h2 class="webtoon__title">가벼운 여행</h2>
+    </div>
+    <div class="webtoon__cuts">
+      <div class="webtoon__cut webtoon__cut--dreamy reveal">
+        <div class="webtoon__panel">
+          <div class="webtoon__silhouette">✈️</div>
+          <p class="webtoon__caption">필요한 건 하나면 충분했다.<br>가벼운 크로스백 하나.</p>
+        </div>
+      </div>
+      <div class="webtoon__cut webtoon__cut--warm reveal reveal-d1">
+        <div class="webtoon__panel">
+          <div class="webtoon__silhouette">👜</div>
+          <p class="webtoon__caption">미니멀한 라인이<br>모든 것을 담는다.</p>
+        </div>
+      </div>
+      <div class="webtoon__cut webtoon__cut--cool reveal reveal-d2">
+        <div class="webtoon__panel">
+          <div class="webtoon__bubble">"딱 좋다."</div>
+          <div class="webtoon__silhouette">👤</div>
+        </div>
+      </div>
+      <div class="webtoon__cut webtoon__cut--reveal reveal reveal-d3">
+        <div class="webtoon__panel">
+          <div class="webtoon__silhouette" style="font-size:4rem">🌅</div>
+          <p class="webtoon__caption">소지품이 곧 정체성.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="tom-transition bg-transition-trigger" data-bg-to="#0a0a0a" data-text-to="#fff">
+    <div class="take-on-me">
+      <div class="take-on-me__sketch">
+        <div class="tom-transition__sketch-inner">
+          <span class="tom-transition__label">Webtoon</span>
+          <span class="tom-transition__icon">✏️</span>
+        </div>
+      </div>
+      <div class="take-on-me__real">
+        <div class="tom-transition__real-inner">
+          <span class="tom-transition__label">Reality</span>
+          <span class="tom-transition__icon">📸</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="real-section">
+    <div class="real-section__hero">
+      <div class="real-section__visual">
+        <div class="card__placeholder" style="height:100%;aspect-ratio:auto">
+          <span class="card__placeholder-icon" style="font-size:5rem">👜</span>
+          <span class="card__placeholder-text">Minimal Crossbody Bag</span>
+        </div>
+      </div>
+      <div class="real-section__info">
+        <span class="real-section__ep">EP.03 Product</span>
+        <h3 class="real-section__name">미니멀 크로스백</h3>
+        <p class="real-section__name-en">Minimal Crossbody Bag</p>
+        <p class="real-section__desc">깔끔한 라인의 미니멀 크로스백. 조절 가능한 스트랩과 내부 포켓으로 실용성과 디자인을 동시에 갖췄습니다.</p>
+        <div class="real-section__price">₩29,900</div>
+        <div class="real-section__colors">
+          <button class="real-section__color is-active" style="--c:#222" title="black"></button>
+          <button class="real-section__color" style="--c:#FFFDD0" title="cream"></button>
+          <button class="real-section__color" style="--c:#808000" title="olive"></button>
+        </div>
+        <div class="real-section__actions">
+          <a href="../showroom/lookbook/PROD-003.html" class="btn btn--accent btn--lg"><span>구매하기</span></a>
+          <a href="../showroom/lookbook/PROD-003.html" class="btn btn--lg"><span>상세보기</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+</article>
+
+<!-- NEXT CHANNEL CTA -->
+<div class="next-channel">
+  <span class="next-channel__label">Next Channel</span>
+  <a href="material.html"><h3 class="next-channel__name">CH2 Material →</h3></a>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__brand">gohsy</div>
+    <p class="footer__tagline">Fashion TV — Wear the Story</p>
+    <div class="footer__links">
+      <a href="../showroom/" class="footer__link hover-line">Showroom</a>
+      <a href="../" class="footer__link hover-line">Home</a>
+    </div>
+    <p class="footer__copy">&copy; 2026 GOHSY. All rights reserved.</p>
+  </div>
+</footer>
+
+<div class="player-bar" id="playerBar">
+  <div class="player-bar__music">
+    <div class="player-bar__art">♪</div>
+    <div class="player-bar__meta">
+      <div class="player-bar__title" id="playerTitle">Take On Me</div>
+      <div class="player-bar__artist" id="playerArtist">a-ha</div>
+    </div>
+  </div>
+  <div class="player-bar__controls">
+    <button class="player-bar__btn" id="playerPrev">⏮</button>
+    <button class="player-bar__btn player-bar__btn--play" id="playerPlay">▶</button>
+    <button class="player-bar__btn" id="playerNext">⏭</button>
+  </div>
+  <div class="player-bar__product">
+    <div class="player-bar__thumb" id="playerThumb">🧥</div>
+    <a href="../showroom/lookbook/PROD-001.html" class="player-bar__buy" id="playerBuy">₩49,900</a>
+  </div>
+</div>
+<div class="page-spacer"></div>
+
+<script src="../js/app.js"></script>
+<script src="../js/scroll-reveal.js"></script>
+<script src="../js/player-bar.js"></script>
+<script src="../js/take-on-me.js"></script>
+</body>
+</html>

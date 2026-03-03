@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CH3 Costume — GOHSY Fashion TV</title>
+<meta name="description" content="캐릭터의 옷장을 열다. 페르소나별 스타일링 세트.">
+<meta name="theme-color" content="#0a0a0a">
+<link rel="icon" href="../assets/brand/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="../styles/tokens.css">
+<link rel="stylesheet" href="../styles/reset.css">
+<link rel="stylesheet" href="../styles/components.css">
+<link rel="stylesheet" href="../styles/animations.css">
+<link rel="stylesheet" href="../styles/costume.css">
+</head>
+<body>
+
+<div class="loader" id="loader"><div class="loader__brand">CH3</div></div>
+
+<nav class="nav" id="nav">
+  <a href="../" class="nav__brand">gohsy</a>
+  <div class="nav__channels">
+    <a href="story.html" class="nav__ch" data-ch="1">CH1 Story</a>
+    <a href="material.html" class="nav__ch" data-ch="2">CH2 Material</a>
+    <a href="costume.html" class="nav__ch is-active" data-ch="3">CH3 Costume</a>
+    <a href="academy.html" class="nav__ch" data-ch="4">CH4 Academy</a>
+  </div>
+  <div class="nav__actions">
+    <a href="../showroom/" class="nav__link">Showroom</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="costume-hero">
+  <span class="costume-hero__channel">Channel 03</span>
+  <h1 class="costume-hero__title">Costume</h1>
+  <p class="costume-hero__sub">캐릭터의 옷장을 열다</p>
+  <div class="scroll-hint">
+    <span class="scroll-hint__line"></span>
+    <span class="scroll-hint__text">Scroll</span>
+  </div>
+</section>
+
+<!-- CHARACTER 01: Tokyo Freelancer -->
+<article class="character reveal" id="char01">
+  <div class="character__profile">
+    <div class="character__portrait">
+      <div class="card__placeholder" style="height:100%;aspect-ratio:auto;border-radius:0">
+        <span class="card__placeholder-icon" style="font-size:6rem">👨‍💻</span>
+        <span class="card__placeholder-text">TOKYO FREELANCER</span>
+      </div>
+    </div>
+    <div class="character__bio">
+      <span class="character__label">Character 01</span>
+      <h2 class="character__name">도쿄 프리랜서</h2>
+      <p class="character__name-en">Tokyo Freelancer</p>
+      <p class="character__desc">도쿄 시모키타자와에 사는 30대 프리랜서 디자이너. 카페에서 작업하고, 빈티지샵을 돌아다니며, 편한 옷이 곧 자신의 아이덴티티라고 믿는다. 오버사이즈 실루엣과 뉴트럴 톤을 선호한다.</p>
+      <div class="character__tags">
+        <span class="character__tag">Oversized</span>
+        <span class="character__tag">Neutral Tone</span>
+        <span class="character__tag">Layering</span>
+        <span class="character__tag">Comfort First</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="outfit-set">
+    <h3 class="outfit-set__title">Today's Set</h3>
+    <div class="outfit-set__items">
+      <a href="../showroom/lookbook/PROD-001.html" class="outfit-item" data-product-id="PROD-001" data-product-name="오버사이즈 니트 가디건" data-product-price="49900" data-product-icon="🧥">
+        <div class="outfit-item__image">
+          <div class="card__placeholder" style="height:100%;border-radius:0">
+            <span class="card__placeholder-icon">🧥</span>
+          </div>
+        </div>
+        <div class="outfit-item__info">
+          <span class="outfit-item__layer">Layer 3 — Outer</span>
+          <span class="outfit-item__name">오버사이즈 니트 가디건</span>
+          <span class="outfit-item__price">₩49,900</span>
+        </div>
+        <div class="outfit-item__line"></div>
+      </a>
+      <a href="../showroom/lookbook/PROD-002.html" class="outfit-item" data-product-id="PROD-002" data-product-name="와이드 핏 카고 팬츠" data-product-price="39900" data-product-icon="👖">
+        <div class="outfit-item__image">
+          <div class="card__placeholder" style="height:100%;border-radius:0">
+            <span class="card__placeholder-icon">👖</span>
+          </div>
+        </div>
+        <div class="outfit-item__info">
+          <span class="outfit-item__layer">Layer 1 — Bottom</span>
+          <span class="outfit-item__name">와이드 핏 카고 팬츠</span>
+          <span class="outfit-item__price">₩39,900</span>
+        </div>
+        <div class="outfit-item__line"></div>
+      </a>
+      <a href="../showroom/lookbook/PROD-003.html" class="outfit-item" data-product-id="PROD-003" data-product-name="미니멀 크로스백" data-product-price="29900" data-product-icon="👜">
+        <div class="outfit-item__image">
+          <div class="card__placeholder" style="height:100%;border-radius:0">
+            <span class="card__placeholder-icon">👜</span>
+          </div>
+        </div>
+        <div class="outfit-item__info">
+          <span class="outfit-item__layer">Accessory</span>
+          <span class="outfit-item__name">미니멀 크로스백</span>
+          <span class="outfit-item__price">₩29,900</span>
+        </div>
+      </a>
+    </div>
+    <div class="outfit-set__total">
+      <span class="outfit-set__total-label">Set Total</span>
+      <span class="outfit-set__total-price">₩119,700</span>
+    </div>
+    <a href="../showroom/" class="btn btn--accent" style="margin-top:var(--sp-6)"><span>전체 세트 구매하기</span></a>
+  </div>
+</article>
+
+<!-- CHARACTER 02: Cafe Owner -->
+<article class="character reveal" id="char02">
+  <div class="character__profile">
+    <div class="character__portrait">
+      <div class="card__placeholder" style="height:100%;aspect-ratio:auto;border-radius:0">
+        <span class="card__placeholder-icon" style="font-size:6rem">👩‍🍳</span>
+        <span class="card__placeholder-text">CAFE OWNER</span>
+      </div>
+    </div>
+    <div class="character__bio">
+      <span class="character__label">Character 02</span>
+      <h2 class="character__name">카페 오너</h2>
+      <p class="character__name-en">Cafe Owner</p>
+      <p class="character__desc">서울 성수동에서 스페셜티 카페를 운영하는 20대 후반. 실용적이면서도 분위기 있는 옷차림을 중시한다. 앞치마 위에도 스타일이 살아야 한다고 생각한다. 따뜻한 톤과 내추럴 소재를 선호한다.</p>
+      <div class="character__tags">
+        <span class="character__tag">Warm Tone</span>
+        <span class="character__tag">Natural</span>
+        <span class="character__tag">Practical</span>
+        <span class="character__tag">Cozy</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="outfit-set">
+    <h3 class="outfit-set__title">Today's Set</h3>
+    <div class="outfit-set__items">
+      <a href="../showroom/lookbook/PROD-001.html" class="outfit-item" data-product-id="PROD-001" data-product-name="오버사이즈 니트 가디건" data-product-price="49900" data-product-icon="🧥">
+        <div class="outfit-item__image">
+          <div class="card__placeholder" style="height:100%;border-radius:0">
+            <span class="card__placeholder-icon">🧥</span>
+          </div>
+        </div>
+        <div class="outfit-item__info">
+          <span class="outfit-item__layer">Layer 3 — Outer</span>
+          <span class="outfit-item__name">오버사이즈 니트 가디건</span>
+          <span class="outfit-item__price">₩49,900</span>
+        </div>
+        <div class="outfit-item__line"></div>
+      </a>
+      <a href="../showroom/lookbook/PROD-003.html" class="outfit-item" data-product-id="PROD-003" data-product-name="미니멀 크로스백" data-product-price="29900" data-product-icon="👜">
+        <div class="outfit-item__image">
+          <div class="card__placeholder" style="height:100%;border-radius:0">
+            <span class="card__placeholder-icon">👜</span>
+          </div>
+        </div>
+        <div class="outfit-item__info">
+          <span class="outfit-item__layer">Accessory</span>
+          <span class="outfit-item__name">미니멀 크로스백</span>
+          <span class="outfit-item__price">₩29,900</span>
+        </div>
+        <div class="outfit-item__line"></div>
+      </a>
+      <a href="../showroom/lookbook/PROD-002.html" class="outfit-item" data-product-id="PROD-002" data-product-name="와이드 핏 카고 팬츠" data-product-price="39900" data-product-icon="👖">
+        <div class="outfit-item__image">
+          <div class="card__placeholder" style="height:100%;border-radius:0">
+            <span class="card__placeholder-icon">👖</span>
+          </div>
+        </div>
+        <div class="outfit-item__info">
+          <span class="outfit-item__layer">Layer 1 — Bottom</span>
+          <span class="outfit-item__name">와이드 핏 카고 팬츠</span>
+          <span class="outfit-item__price">₩39,900</span>
+        </div>
+      </a>
+    </div>
+    <div class="outfit-set__total">
+      <span class="outfit-set__total-label">Set Total</span>
+      <span class="outfit-set__total-price">₩119,700</span>
+    </div>
+    <a href="../showroom/" class="btn btn--accent" style="margin-top:var(--sp-6)"><span>전체 세트 구매하기</span></a>
+  </div>
+</article>
+
+<!-- CHARACTER GRID -->
+<section class="section" style="border-top:1px solid var(--border)">
+  <div class="container">
+    <div class="section__label">All Characters</div>
+    <h2 class="section__title" style="font-weight:var(--w-light)">페르소나 갤러리</h2>
+    <div class="char-grid">
+      <a href="#char01" class="char-thumb">
+        <div class="char-thumb__image">
+          <div class="card__placeholder" style="height:100%;border-radius:0">
+            <span class="card__placeholder-icon" style="font-size:2.5rem">👨‍💻</span>
+          </div>
+        </div>
+        <span class="char-thumb__name">도쿄 프리랜서</span>
+        <span class="char-thumb__items">3 items · ₩119,700</span>
+      </a>
+      <a href="#char02" class="char-thumb">
+        <div class="char-thumb__image">
+          <div class="card__placeholder" style="height:100%;border-radius:0">
+            <span class="card__placeholder-icon" style="font-size:2.5rem">👩‍🍳</span>
+          </div>
+        </div>
+        <span class="char-thumb__name">카페 오너</span>
+        <span class="char-thumb__items">3 items · ₩119,700</span>
+      </a>
+      <div class="char-thumb char-thumb--locked">
+        <div class="char-thumb__image">
+          <div class="card__placeholder" style="height:100%;border-radius:0;opacity:0.3">
+            <span class="card__placeholder-icon" style="font-size:2.5rem">🎨</span>
+          </div>
+        </div>
+        <span class="char-thumb__name">아트 디렉터</span>
+        <span class="char-thumb__items">Coming Soon</span>
+      </div>
+      <div class="char-thumb char-thumb--locked">
+        <div class="char-thumb__image">
+          <div class="card__placeholder" style="height:100%;border-radius:0;opacity:0.3">
+            <span class="card__placeholder-icon" style="font-size:2.5rem">🏃</span>
+          </div>
+        </div>
+        <span class="char-thumb__name">러너</span>
+        <span class="char-thumb__items">Coming Soon</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEXT CHANNEL -->
+<div class="next-channel">
+  <span class="next-channel__label">Next Channel</span>
+  <a href="academy.html"><h3 class="next-channel__name">CH4 Academy →</h3></a>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__brand">gohsy</div>
+    <p class="footer__tagline">Fashion TV — Wear the Story</p>
+    <div class="footer__links">
+      <a href="../showroom/" class="footer__link hover-line">Showroom</a>
+      <a href="../" class="footer__link hover-line">Home</a>
+    </div>
+    <p class="footer__copy">&copy; 2026 GOHSY. All rights reserved.</p>
+  </div>
+</footer>
+
+<div class="player-bar" id="playerBar">
+  <div class="player-bar__music">
+    <div class="player-bar__art">♪</div>
+    <div class="player-bar__meta">
+      <div class="player-bar__title" id="playerTitle">Take On Me</div>
+      <div class="player-bar__artist" id="playerArtist">a-ha</div>
+    </div>
+  </div>
+  <div class="player-bar__controls">
+    <button class="player-bar__btn" id="playerPrev">⏮</button>
+    <button class="player-bar__btn player-bar__btn--play" id="playerPlay">▶</button>
+    <button class="player-bar__btn" id="playerNext">⏭</button>
+  </div>
+  <div class="player-bar__product">
+    <div class="player-bar__thumb" id="playerThumb">🧥</div>
+    <a href="../showroom/lookbook/PROD-001.html" class="player-bar__buy" id="playerBuy">₩49,900</a>
+  </div>
+</div>
+<div class="page-spacer"></div>
+
+<script src="../js/app.js"></script>
+<script src="../js/scroll-reveal.js"></script>
+<script src="../js/player-bar.js"></script>
+</body>
+</html>

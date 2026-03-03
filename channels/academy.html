@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CH4 ACADEMY — GOHSY Fashion TV</title>
+<meta name="description" content="실루엣부터 컬러까지. 패션의 기초를 배우는 아카데미.">
+<meta name="theme-color" content="#0a0a0a">
+<link rel="icon" href="../assets/brand/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="../styles/tokens.css">
+<link rel="stylesheet" href="../styles/reset.css">
+<link rel="stylesheet" href="../styles/components.css">
+<link rel="stylesheet" href="../styles/animations.css">
+<link rel="stylesheet" href="../styles/academy.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <a href="../" class="nav__brand">GOHSY</a>
+  <div class="nav__channels">
+    <a href="story.html" class="nav__ch" data-ch="ch1">CH1 Story</a>
+    <a href="material.html" class="nav__ch" data-ch="ch2">CH2 Material</a>
+    <a href="costume.html" class="nav__ch" data-ch="ch3">CH3 Costume</a>
+    <a href="academy.html" class="nav__ch is-active" data-ch="ch4">CH4 Academy</a>
+  </div>
+  <div class="nav__actions">
+    <a href="../showroom/" class="nav__link">Showroom</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="academy-hero">
+  <span class="academy-hero__channel">Channel 04</span>
+  <h1 class="academy-hero__title">Academy</h1>
+  <p class="academy-hero__sub">패션의 기초를 배우다</p>
+  <div class="scroll-hint">
+    <div class="scroll-hint__line"></div>
+    <span class="scroll-hint__text">Scroll</span>
+  </div>
+</section>
+
+<!-- CURRICULUM -->
+<section class="curriculum">
+  <div class="curriculum__header">
+    <span class="section__label reveal" style="color:var(--ch4)">Curriculum</span>
+    <h2 class="section__title reveal">전체 커리큘럼</h2>
+  </div>
+
+  <a href="#lesson01" class="lesson-entry reveal">
+    <span class="lesson-entry__num">01</span>
+    <div class="lesson-entry__content">
+      <div class="lesson-entry__title">실루엣의 이해</div>
+      <div class="lesson-entry__desc">A라인, I라인, Y라인, 박스 — 4가지 기본 실루엣 마스터하기</div>
+    </div>
+    <span class="lesson-entry__arrow">→</span>
+  </a>
+  <a href="#lesson02" class="lesson-entry reveal reveal-d1">
+    <span class="lesson-entry__num">02</span>
+    <div class="lesson-entry__content">
+      <div class="lesson-entry__title">컬러 팔레트</div>
+      <div class="lesson-entry__desc">6:3:1 법칙으로 배우는 배색의 기초</div>
+    </div>
+    <span class="lesson-entry__arrow">→</span>
+  </a>
+  <a href="#lesson03" class="lesson-entry reveal reveal-d2">
+    <span class="lesson-entry__num">03</span>
+    <div class="lesson-entry__content">
+      <div class="lesson-entry__title">레이어링의 기술</div>
+      <div class="lesson-entry__desc">3-Layer 시스템으로 완성하는 스타일링</div>
+    </div>
+    <span class="lesson-entry__arrow">→</span>
+  </a>
+  <div class="lesson-entry lesson-entry--locked reveal reveal-d3">
+    <span class="lesson-entry__num">04</span>
+    <div class="lesson-entry__content">
+      <div class="lesson-entry__title">소재와 계절</div>
+      <div class="lesson-entry__desc">계절별 소재 선택 가이드</div>
+    </div>
+    <span class="lesson-entry__arrow">🔒</span>
+  </div>
+  <div class="lesson-entry lesson-entry--locked reveal reveal-d4">
+    <span class="lesson-entry__num">05</span>
+    <div class="lesson-entry__content">
+      <div class="lesson-entry__title">핏의 과학</div>
+      <div class="lesson-entry__desc">체형별 최적 핏 찾기</div>
+    </div>
+    <span class="lesson-entry__arrow">🔒</span>
+  </div>
+</section>
+
+<!-- LESSON 01 — 실루엣 -->
+<section class="lesson" id="lesson01">
+  <div class="lesson__header">
+    <div class="lesson__num">01</div>
+    <h2 class="lesson__title">실루엣의 이해</h2>
+    <p class="lesson__subtitle">옷의 형태를 결정하는 4가지 기본 실루엣</p>
+  </div>
+  <div class="lesson__spread">
+    <div class="lesson__visual">
+      <div class="silhouette-grid">
+        <div class="silhouette-item is-highlighted">
+          <div class="silhouette-item__shape">A</div>
+          <span class="silhouette-item__label">A-Line</span>
+        </div>
+        <div class="silhouette-item">
+          <div class="silhouette-item__shape">I</div>
+          <span class="silhouette-item__label">I-Line</span>
+        </div>
+        <div class="silhouette-item">
+          <div class="silhouette-item__shape">Y</div>
+          <span class="silhouette-item__label">Y-Line</span>
+        </div>
+        <div class="silhouette-item">
+          <div class="silhouette-item__shape">□</div>
+          <span class="silhouette-item__label">Box</span>
+        </div>
+      </div>
+    </div>
+    <div class="lesson__text">
+      <div class="lesson__body">
+        <p><strong>실루엣은 옷의 첫인상이다.</strong> 디테일, 컬러, 소재보다 먼저 눈에 들어오는 것은 전체적인 형태다. 4가지 기본 실루엣을 이해하면 자신에게 맞는 스타일을 찾는 출발점이 된다.</p>
+        <p><strong>A-Line:</strong> 어깨에서 아래로 갈수록 넓어지는 형태. 하체를 풍성하게 보이게 하며, 여성적이고 클래식한 인상. 플레어 스커트, A라인 코트가 대표적.</p>
+        <p><strong>I-Line:</strong> 위아래 동일한 폭. 가장 깔끔하고 모던한 인상. 슬림 팬츠 + 피팅된 상의 조합. 키가 커 보이는 효과.</p>
+        <p><strong>Y-Line:</strong> 상체가 넓고 하체가 좁은 형태. 오버사이즈 아우터 + 스키니 팬츠의 조합. 어깨를 강조하는 남성적 실루엣.</p>
+        <p><strong>Box:</strong> 전체가 박스형. 오버사이즈 핏의 기본. GOHSY의 니트 가디건이 만드는 실루엣이 바로 이것.</p>
+      </div>
+      <div class="lesson__callout">
+        <p>GOHSY의 오버사이즈 니트 가디건은 Box 실루엣을 기반으로, 와이드 팬츠와 매치하면 A-Line으로 변환된다.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRACTICE -->
+  <div class="practice">
+    <h3 class="practice__question">Q. 다음 중 I-Line 실루엣을 만드는 조합은?</h3>
+    <div class="practice__options">
+      <button class="practice__option" data-answer="wrong" onclick="this.classList.add('is-selected')">
+        <div class="practice__option-icon">🧥</div>
+        <div class="practice__option-label">오버사이즈 코트 + 스키니진</div>
+      </button>
+      <button class="practice__option" data-answer="correct" onclick="this.classList.add('is-selected','is-correct');document.getElementById('feedback01').classList.add('is-visible')">
+        <div class="practice__option-icon">👔</div>
+        <div class="practice__option-label">피팅 재킷 + 슬림 팬츠</div>
+      </button>
+      <button class="practice__option" data-answer="wrong" onclick="this.classList.add('is-selected')">
+        <div class="practice__option-icon">👗</div>
+        <div class="practice__option-label">크롭 탑 + 플레어 스커트</div>
+      </button>
+    </div>
+    <p class="practice__feedback" id="feedback01">정답! 피팅 재킷과 슬림 팬츠는 위아래 동일한 폭을 만들어 I-Line 실루엣을 완성합니다.</p>
+  </div>
+</section>
+
+<!-- LESSON 02 — 컬러 -->
+<section class="lesson" id="lesson02">
+  <div class="lesson__header">
+    <div class="lesson__num">02</div>
+    <h2 class="lesson__title">컬러 팔레트</h2>
+    <p class="lesson__subtitle">6:3:1 법칙 — 세 가지 비율로 완성하는 배색</p>
+  </div>
+  <div class="lesson__spread">
+    <div class="lesson__visual">
+      <div style="display:flex;flex-direction:column;gap:var(--sp-4);width:100%;max-width:300px">
+        <div style="display:flex;gap:2px;height:120px">
+          <div style="flex:6;background:#1a1a1a;display:flex;align-items:center;justify-content:center;color:var(--text-3);font-size:var(--text-micro);letter-spacing:var(--ls-wide)">60%</div>
+          <div style="flex:3;background:#C19A6B;display:flex;align-items:center;justify-content:center;color:#1a1a1a;font-size:var(--text-micro);letter-spacing:var(--ls-wide)">30%</div>
+          <div style="flex:1;background:#ff2d55;display:flex;align-items:center;justify-content:center;color:#fff;font-size:var(--text-micro)">10%</div>
+        </div>
+        <div style="display:flex;gap:var(--sp-3);font-size:var(--text-micro);color:var(--text-3)">
+          <span>Base</span>
+          <span>Secondary</span>
+          <span>Accent</span>
+        </div>
+      </div>
+    </div>
+    <div class="lesson__text">
+      <div class="lesson__body">
+        <p><strong>6:3:1은 인테리어에서 시작된 배색 법칙이다.</strong> 패션에 적용하면 '안전하면서도 세련된' 코디의 공식이 된다.</p>
+        <p><strong>60% — Base Color:</strong> 가장 넓은 면적을 차지하는 색. 보통 아우터나 바지. 뉴트럴 톤(블랙, 네이비, 그레이, 베이지)을 추천.</p>
+        <p><strong>30% — Secondary Color:</strong> 두 번째로 넓은 면적. 상의나 이너. 베이스와 조화를 이루면서 약간의 변화를 주는 색.</p>
+        <p><strong>10% — Accent Color:</strong> 가방, 신발, 액세서리 등 포인트. 가장 눈에 띄는 색을 사용해도 면적이 작아 부담이 없다.</p>
+      </div>
+      <div class="lesson__callout">
+        <p>GOHSY 코디 예시: 블랙 카고 팬츠(60%) + 아이보리 니트(30%) + 올리브 크로스백(10%)</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LESSON 03 — 레이어링 -->
+<section class="lesson" id="lesson03">
+  <div class="lesson__header">
+    <div class="lesson__num">03</div>
+    <h2 class="lesson__title">레이어링의 기술</h2>
+    <p class="lesson__subtitle">3-Layer 시스템 — 기본, 중간, 외투</p>
+  </div>
+  <div class="lesson__spread">
+    <div class="lesson__visual">
+      <div style="display:flex;flex-direction:column;gap:var(--sp-2);width:100%;max-width:280px">
+        <div style="padding:var(--sp-6);border:1px solid var(--border);text-align:center">
+          <div style="font-size:var(--text-micro);color:var(--text-3);letter-spacing:var(--ls-wider);text-transform:uppercase;margin-bottom:var(--sp-1)">Layer 3 — Outer</div>
+          <div style="font-size:var(--text-body)">🧥 니트 가디건</div>
+        </div>
+        <div style="padding:var(--sp-6);border:1px solid var(--border);text-align:center">
+          <div style="font-size:var(--text-micro);color:var(--text-3);letter-spacing:var(--ls-wider);text-transform:uppercase;margin-bottom:var(--sp-1)">Layer 2 — Mid</div>
+          <div style="font-size:var(--text-body)">👕 기본 티셔츠</div>
+        </div>
+        <div style="padding:var(--sp-6);border:1px solid var(--border);text-align:center">
+          <div style="font-size:var(--text-micro);color:var(--text-3);letter-spacing:var(--ls-wider);text-transform:uppercase;margin-bottom:var(--sp-1)">Layer 1 — Base</div>
+          <div style="font-size:var(--text-body)">👖 카고 팬츠</div>
+        </div>
+      </div>
+    </div>
+    <div class="lesson__text">
+      <div class="lesson__body">
+        <p><strong>레이어링은 겹침의 예술이다.</strong> 등산에서 시작된 3-Layer 시스템은 패션에서도 동일하게 적용된다. 기능적이면서 동시에 시각적 깊이를 만든다.</p>
+        <p><strong>Layer 1 — Base:</strong> 피부에 가장 가까운 레이어. 티셔츠, 이너웨어. 편안함이 최우선.</p>
+        <p><strong>Layer 2 — Mid:</strong> 보온과 스타일의 중간층. 셔츠, 니트, 후디. 실루엣을 만드는 핵심.</p>
+        <p><strong>Layer 3 — Outer:</strong> 가장 바깥. 코트, 재킷, 가디건. 전체 실루엣을 결정한다.</p>
+        <p>레이어링의 핵심은 각 층의 <strong>길이 차이</strong>다. 안쪽이 짧고 바깥이 길어야 자연스러운 그라데이션이 생긴다.</p>
+      </div>
+      <div class="lesson__callout">
+        <p>GOHSY 3-Layer: 기본 티(Base) → 와이드 카고(Mid) → 오버사이즈 니트 가디건(Outer) → 크로스백(Accessory)</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REFERENCES -->
+<section class="references">
+  <span class="section__label reveal" style="color:var(--ch4)">References</span>
+  <h2 class="section__title reveal">참고 자료</h2>
+  <div class="reference-list">
+    <div class="reference-item reveal">
+      <div class="reference-item__title">The Fashion System</div>
+      <div class="reference-item__pub">Roland Barthes, 1967</div>
+    </div>
+    <div class="reference-item reveal reveal-d1">
+      <div class="reference-item__title">Fashionopolis</div>
+      <div class="reference-item__pub">Dana Thomas, 2019</div>
+    </div>
+    <div class="reference-item reveal reveal-d2">
+      <div class="reference-item__title">The End of Fashion</div>
+      <div class="reference-item__pub">Teri Agins, 1999</div>
+    </div>
+    <div class="reference-item reveal reveal-d3">
+      <div class="reference-item__title">패션의 탄생</div>
+      <div class="reference-item__pub">이재정, 2015</div>
+    </div>
+  </div>
+</section>
+
+<!-- GO TO SHOWROOM CTA -->
+<div class="next-channel reveal">
+  <span class="next-channel__label">Go Shopping</span>
+  <a href="../showroom/">
+    <h2 class="next-channel__name">Showroom →</h2>
+  </a>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__brand">GOHSY</div>
+    <p class="footer__tagline">Fashion TV — Wear the Story</p>
+    <div class="footer__links">
+      <a href="story.html" class="footer__link">Story</a>
+      <a href="material.html" class="footer__link">Material</a>
+      <a href="costume.html" class="footer__link">Costume</a>
+      <a href="academy.html" class="footer__link">Academy</a>
+      <a href="../showroom/" class="footer__link">Showroom</a>
+    </div>
+    <p class="footer__copy">&copy; 2026 GOHSY. All rights reserved.</p>
+  </div>
+</footer>
+
+<div class="page-spacer"></div>
+
+<!-- PLAYER BAR -->
+<div class="player-bar" id="playerBar">
+  <div class="player-bar__music">
+    <div class="player-bar__art">♫</div>
+    <div class="player-bar__meta">
+      <div class="player-bar__title" id="playerTitle">Take On Me</div>
+      <div class="player-bar__artist" id="playerArtist">a-ha</div>
+    </div>
+  </div>
+  <div class="player-bar__controls">
+    <button class="player-bar__btn" id="playerPrev">⏮</button>
+    <button class="player-bar__btn player-bar__btn--play" id="playerPlay">▶</button>
+    <button class="player-bar__btn" id="playerNext">⏭</button>
+  </div>
+  <div class="player-bar__product" id="playerProduct">
+    <div class="player-bar__thumb" id="playerThumb">🧥</div>
+    <a href="../showroom/" class="player-bar__buy">Shop Now</a>
+  </div>
+</div>
+
+<script src="../js/app.js"></script>
+<script src="../js/scroll-reveal.js"></script>
+<script src="../js/player-bar.js"></script>
+</body>
+</html>

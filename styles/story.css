@@ -1,0 +1,56 @@
+/* GOHSY Fashion TV — CH1 STORY */
+
+/* ── Hero ── */
+.story-hero{position:relative;height:100vh;height:100dvh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding-top:var(--nav-h);overflow:hidden}
+.story-hero__channel{font-size:var(--text-micro);font-weight:var(--w-medium);letter-spacing:var(--ls-widest);text-transform:uppercase;color:var(--ch1);margin-bottom:var(--sp-4);animation:fadeIn 0.8s var(--ease-out) 0.3s both}
+.story-hero__title{font-size:var(--text-display);font-weight:var(--w-black);letter-spacing:var(--ls-tight);line-height:0.85;text-transform:uppercase;color:transparent;-webkit-text-stroke:1.5px var(--text);animation:fadeIn 1s var(--ease-out) 0.5s both}
+.story-hero__sub{font-size:var(--text-body);font-weight:var(--w-light);color:var(--text-2);margin-top:var(--sp-6);letter-spacing:var(--ls-wide);animation:fadeIn 0.8s var(--ease-out) 0.8s both}
+
+/* ── Episode ── */
+.episode{position:relative;transition:background-color 1.2s var(--ease-out),color 1.2s var(--ease-out)}
+
+/* ── Webtoon (Light) ── */
+.webtoon{background:#f5f3ee;color:#111;padding:var(--sp-16) 0;transition:background-color 1s var(--ease-out),color 1s var(--ease-out)}
+.webtoon__header{max-width:var(--max-w-text);margin:0 auto;padding:0 var(--gutter) var(--sp-10);text-align:center}
+.webtoon__ep{font-size:var(--text-micro);font-weight:var(--w-medium);letter-spacing:var(--ls-widest);text-transform:uppercase;color:var(--ch1);display:block;margin-bottom:var(--sp-3)}
+.webtoon__title{font-size:var(--text-h1);font-weight:var(--w-bold);color:#111;letter-spacing:var(--ls-tight)}
+.webtoon__cuts{max-width:var(--max-w-narrow);margin:0 auto;padding:0 var(--gutter);display:grid;grid-template-columns:1fr 1fr;gap:var(--sp-4)}
+.webtoon__cut{position:relative;border:3px solid #111;border-radius:var(--r-sm);overflow:hidden;background:#fff}
+.webtoon__cut--warm .webtoon__panel{background:linear-gradient(180deg,#fef9ef,#fdf0d5)}
+.webtoon__cut--cool .webtoon__panel{background:linear-gradient(180deg,#eef3fe,#d5e3fd)}
+.webtoon__cut--dreamy .webtoon__panel{background:linear-gradient(180deg,#f3eeff,#e2d5fd)}
+.webtoon__cut--reveal .webtoon__panel{background:linear-gradient(180deg,#fff,#f5f3ee)}
+.webtoon__panel{aspect-ratio:3/4;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:var(--sp-6);text-align:center;position:relative}
+.webtoon__silhouette{font-size:clamp(2.5rem,6vw,4rem);margin-bottom:var(--sp-4);opacity:0.8}
+.webtoon__caption{font-size:var(--text-small);font-weight:var(--w-medium);line-height:var(--lh-snug);color:#333;max-width:200px}
+.webtoon__bubble{position:relative;display:inline-block;background:#fff;border:2px solid #111;border-radius:var(--r-xl);padding:var(--sp-3) var(--sp-6);font-size:var(--text-body);font-weight:var(--w-medium);color:#111;margin-bottom:var(--sp-4);max-width:220px}
+.webtoon__bubble::after{content:'';position:absolute;bottom:-10px;left:50%;transform:translateX(-50%);border-left:8px solid transparent;border-right:8px solid transparent;border-top:10px solid #111}
+@media(max-width:768px){.webtoon__cuts{grid-template-columns:1fr;max-width:360px}.webtoon__panel{aspect-ratio:4/3}}
+
+/* ── Take On Me Transition Zone ── */
+.tom-transition{position:relative;min-height:60vh;display:flex;align-items:center;justify-content:center;overflow:hidden;background:linear-gradient(to bottom,#f5f3ee 0%,#888 30%,#222 70%,#0a0a0a 100%)}
+.tom-transition .take-on-me{width:100%;max-width:400px;aspect-ratio:3/4;margin:0 auto;border-radius:var(--r-lg);overflow:hidden}
+.tom-transition .take-on-me__sketch,.tom-transition .take-on-me__real{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:var(--sp-4)}
+.tom-transition .take-on-me__sketch{background:#fff;border:3px solid #111}
+.tom-transition .take-on-me__real{background:var(--surface)}
+.tom-transition__sketch-inner,.tom-transition__real-inner{display:flex;flex-direction:column;align-items:center;gap:var(--sp-3)}
+.tom-transition__label{font-size:var(--text-micro);font-weight:var(--w-medium);letter-spacing:var(--ls-widest);text-transform:uppercase;color:var(--text-3)}
+.tom-transition__icon{font-size:2.5rem}
+.tom-transition__sketch-inner .tom-transition__label{color:#666}
+.tom-transition__real-inner .tom-transition__label{color:var(--text-3)}
+
+/* ── Real Section (Dark) ── */
+.real-section{background:var(--bg);color:var(--text);padding:var(--sp-24) 0}
+.real-section__hero{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);max-width:var(--max-w);margin:0 auto}
+.real-section__visual{background:var(--bg);display:flex;align-items:center;justify-content:center;min-height:500px;padding:var(--sp-10)}
+.real-section__info{background:var(--bg);display:flex;flex-direction:column;justify-content:center;padding:var(--sp-12)}
+.real-section__ep{font-size:var(--text-micro);font-weight:var(--w-medium);letter-spacing:var(--ls-widest);text-transform:uppercase;color:var(--ch1);margin-bottom:var(--sp-6)}
+.real-section__name{font-size:var(--text-h1);font-weight:var(--w-bold);letter-spacing:var(--ls-tight);margin-bottom:var(--sp-2)}
+.real-section__name-en{font-size:var(--text-small);color:var(--text-3);font-weight:var(--w-light);margin-bottom:var(--sp-4)}
+.real-section__desc{font-size:var(--text-body);font-weight:var(--w-light);line-height:var(--lh-relaxed);color:var(--text-2);margin-bottom:var(--sp-6);max-width:400px}
+.real-section__price{font-size:var(--text-h2);font-weight:var(--w-semibold);color:var(--accent);margin-bottom:var(--sp-6)}
+.real-section__colors{display:flex;gap:var(--sp-3);margin-bottom:var(--sp-8)}
+.real-section__color{width:28px;height:28px;border-radius:var(--r-full);background:var(--c);border:2px solid var(--border);cursor:pointer;transition:all var(--dur-fast) ease}
+.real-section__color:hover,.real-section__color.is-active{border-color:var(--accent);transform:scale(1.15)}
+.real-section__actions{display:flex;gap:var(--sp-3);flex-wrap:wrap}
+@media(max-width:768px){.real-section__hero{grid-template-columns:1fr}.real-section__visual{min-height:300px}.real-section__info{padding:var(--sp-8) var(--gutter)}.real-section__actions{flex-direction:column}.real-section__actions .btn{width:100%}}

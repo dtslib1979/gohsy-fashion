@@ -1,0 +1,43 @@
+/* GOHSY Fashion TV — CH2 MATERIAL */
+.material-hero{position:relative;height:100vh;height:100dvh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding-top:var(--nav-h);overflow:hidden}
+.material-hero__channel{font-size:var(--text-micro);font-weight:var(--w-medium);letter-spacing:var(--ls-widest);text-transform:uppercase;color:var(--ch2);margin-bottom:var(--sp-4);animation:fadeIn 0.8s var(--ease-out) 0.3s both}
+.material-hero__title{font-size:var(--text-display);font-weight:var(--w-black);letter-spacing:var(--ls-tight);line-height:0.85;text-transform:uppercase;color:transparent;-webkit-text-stroke:1.5px var(--text);animation:fadeIn 1s var(--ease-out) 0.5s both}
+.material-hero__sub{font-size:var(--text-body);font-weight:var(--w-light);color:var(--text-2);margin-top:var(--sp-6);letter-spacing:var(--ls-wide);animation:fadeIn 0.8s var(--ease-out) 0.8s both}
+
+/* ── Magazine Spread ── */
+.spread{display:grid;grid-template-columns:1fr 1fr;min-height:80vh;border-top:1px solid var(--border)}
+.spread__visual{position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;min-height:400px}
+.spread__vol{position:absolute;top:var(--sp-8);left:var(--sp-8);font-size:var(--text-micro);font-weight:var(--w-medium);letter-spacing:var(--ls-widest);text-transform:uppercase;color:var(--text-3);z-index:1}
+
+/* CSS Texture Patterns */
+.texture{width:100%;height:100%;position:absolute;inset:0}
+.texture--wool{background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(255,255,255,0.015) 2px,rgba(255,255,255,0.015) 4px),radial-gradient(circle 1px,rgba(255,255,255,0.02) 1px,transparent 1px),linear-gradient(135deg,#1e1a18,#111);background-size:auto,8px 8px,auto}
+.texture--cotton{background:repeating-linear-gradient(45deg,transparent,transparent 1px,rgba(255,255,255,0.008) 1px,rgba(255,255,255,0.008) 2px),repeating-linear-gradient(-45deg,transparent,transparent 1px,rgba(255,255,255,0.005) 1px,rgba(255,255,255,0.005) 2px),linear-gradient(135deg,#18191e,#111)}
+.texture--leather{background:radial-gradient(ellipse 100% 100% at 50% 0%,rgba(139,69,19,0.06) 0%,transparent 70%),radial-gradient(ellipse 60% 40% at 30% 60%,rgba(101,67,33,0.04) 0%,transparent 60%),linear-gradient(135deg,#1a1510,#111)}
+
+.spread__editorial{display:flex;flex-direction:column;justify-content:center;padding:var(--sp-16) var(--sp-12);border-left:1px solid var(--border)}
+.spread__header{margin-bottom:var(--sp-8)}
+.spread__category{font-size:var(--text-micro);font-weight:var(--w-medium);letter-spacing:var(--ls-widest);text-transform:uppercase;color:var(--ch2);display:block;margin-bottom:var(--sp-3)}
+.spread__title{font-size:var(--text-hero);font-weight:var(--w-thin);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:var(--sp-2)}
+.spread__subtitle{font-size:var(--text-body);font-weight:var(--w-light);color:var(--text-2)}
+.spread__body{font-size:var(--text-body);font-weight:var(--w-light);line-height:var(--lh-relaxed);color:var(--text-2);max-width:480px;margin-bottom:var(--sp-8)}
+.spread__body p{margin-bottom:var(--sp-6)}
+.spread__dropcap{font-size:4rem;font-weight:var(--w-black);line-height:0.85;float:left;margin-right:var(--sp-3);margin-top:var(--sp-1);color:var(--ch2)}
+.spread__spec{margin-top:var(--sp-6)}
+.spec-table{width:100%;border-collapse:collapse}
+.spec-table tr{border-bottom:1px solid var(--border)}
+.spec-table td{padding:var(--sp-3) 0;font-size:var(--text-small)}
+.spec-table td:first-child{color:var(--text-3);width:100px;font-weight:var(--w-medium)}
+@media(max-width:768px){.spread{grid-template-columns:1fr;min-height:auto}.spread__visual{min-height:300px}.spread__editorial{padding:var(--sp-10) var(--gutter);border-left:none;border-top:1px solid var(--border)}}
+
+/* ── Archive ── */
+.archive{padding:var(--sp-16) 0;border-top:1px solid var(--border)}
+.archive__list{max-width:var(--max-w);margin:var(--sp-8) auto 0;padding:0 var(--gutter)}
+.archive__item{display:flex;align-items:baseline;gap:var(--sp-6);padding:var(--sp-5) 0;border-bottom:1px solid var(--border);transition:all var(--dur-fast) ease;cursor:pointer;text-decoration:none;color:inherit}
+.archive__item:hover{padding-left:var(--sp-4)}
+.archive__num{font-size:var(--text-xs);font-weight:var(--w-medium);letter-spacing:var(--ls-wider);color:var(--text-3);min-width:40px;font-family:var(--font-mono)}
+.archive__name{font-size:var(--text-body);font-weight:var(--w-light);flex:1}
+.archive__type{font-size:var(--text-xs);color:var(--text-3);letter-spacing:var(--ls-wide)}
+.archive__arrow{font-size:var(--text-small);color:var(--text-3);transition:transform var(--dur-fast) ease}
+.archive__item:hover .archive__arrow{transform:translateX(4px);color:var(--text)}
+.archive__item--locked{opacity:0.3;pointer-events:none}

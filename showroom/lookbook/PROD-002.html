@@ -3,88 +3,143 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>와이드 핏 카고 팬츠 — GOHSY</title>
+<title>와이드 핏 카고 팬츠 — GOHSY Showroom</title>
+<meta name="description" content="와이드 핏 카고 팬츠. 밀리터리 감성의 카고 포켓 디테일과 와이드 핏.">
+<meta name="theme-color" content="#0a0a0a">
+<link rel="icon" href="../../assets/brand/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="../../styles/tokens.css">
+<link rel="stylesheet" href="../../styles/reset.css">
+<link rel="stylesheet" href="../../styles/components.css">
+<link rel="stylesheet" href="../../styles/animations.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-:root{--bg:#0F0F0F;--surface:#1A1A1A;--card:#222;--accent:#E94560;--text:#F5F5F5;--dim:rgba(245,245,245,0.5);--border:rgba(255,255,255,0.06)}
-body{font-family:-apple-system,system-ui,'Noto Sans KR',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
-nav{padding:1rem 1.5rem;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:1rem}
-nav a{color:var(--dim);text-decoration:none;font-size:0.8rem}
-nav a:hover{color:var(--text)}
-.brand{font-size:1rem;font-weight:800;letter-spacing:0.1em}
-.brand span{color:var(--accent)}
-.product{max-width:800px;margin:0 auto;padding:2rem 1.5rem}
-.hero-img{width:100%;aspect-ratio:3/4;background:var(--card);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:5rem;margin-bottom:2rem}
-.badge{display:inline-block;font-size:0.65rem;padding:0.3rem 0.7rem;background:rgba(233,69,96,0.15);color:var(--accent);border-radius:4px;margin-bottom:0.5rem}
-h1{font-size:1.6rem;font-weight:700;margin-bottom:0.3rem}
-.name-en{font-size:0.85rem;color:var(--dim);margin-bottom:1rem}
-.price{font-size:1.8rem;font-weight:800;color:var(--accent);margin-bottom:1.5rem}
-.colors{display:flex;gap:0.5rem;margin-bottom:2rem}
-.color-opt{width:32px;height:32px;border-radius:50%;border:2px solid var(--border);cursor:pointer;transition:border-color 0.2s}
-.color-opt:hover,.color-opt.sel{border-color:var(--accent)}
-.spec-table{width:100%;border-collapse:collapse;margin-bottom:2rem}
-.spec-table td{padding:0.6rem 0;font-size:0.85rem;border-bottom:1px solid var(--border)}
-.spec-table td:first-child{color:var(--dim);width:100px}
-.sizes{display:flex;gap:0.5rem;margin-bottom:2rem}
-.size-btn{padding:0.5rem 1rem;border:1px solid var(--border);border-radius:6px;background:transparent;color:var(--dim);font-size:0.8rem;cursor:pointer;transition:all 0.2s}
-.size-btn:hover,.size-btn.sel{border-color:var(--accent);color:var(--accent)}
-.channels{display:flex;gap:0.8rem;flex-wrap:wrap;margin-bottom:2rem}
-.ch-link{padding:0.6rem 1.2rem;border:1px solid var(--border);border-radius:8px;font-size:0.8rem;color:var(--dim);text-decoration:none;transition:all 0.2s}
-.ch-link.pending{opacity:0.5;pointer-events:none}
-.filming{background:var(--surface);border-radius:8px;padding:1.2rem;margin-bottom:2rem}
-.filming h3{font-size:0.75rem;color:var(--accent);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.6rem}
-.filming li{font-size:0.8rem;color:var(--dim);margin-left:1.2rem;margin-bottom:0.3rem}
-footer{text-align:center;padding:3rem 1.5rem;font-size:0.65rem;color:var(--dim);border-top:1px solid var(--border);margin-top:2rem}
+.lookbook-hero{display:grid;grid-template-columns:1fr 1fr;min-height:calc(100vh - var(--nav-h));margin-top:var(--nav-h)}
+.lookbook-hero__visual{display:flex;align-items:center;justify-content:center;background:var(--surface);position:relative}
+.lookbook-hero__info{display:flex;flex-direction:column;justify-content:center;padding:var(--sp-12)}
+.lookbook-hero__badge{display:inline-block;font-size:var(--text-micro);font-weight:var(--w-semibold);letter-spacing:var(--ls-wider);text-transform:uppercase;padding:var(--sp-1) var(--sp-4);border:1px solid var(--accent);color:var(--accent);margin-bottom:var(--sp-6);width:fit-content}
+.lookbook-hero__name{font-size:var(--text-h1);font-weight:var(--w-bold);letter-spacing:var(--ls-tight);margin-bottom:var(--sp-2)}
+.lookbook-hero__name-en{font-size:var(--text-small);color:var(--text-3);font-weight:var(--w-light);margin-bottom:var(--sp-6)}
+.lookbook-hero__desc{font-size:var(--text-body);font-weight:var(--w-light);line-height:var(--lh-relaxed);color:var(--text-2);margin-bottom:var(--sp-8);max-width:420px}
+.lookbook-hero__price{font-size:var(--text-h1);font-weight:var(--w-semibold);color:var(--accent);margin-bottom:var(--sp-8)}
+.lookbook-colors{display:flex;gap:var(--sp-3);margin-bottom:var(--sp-6)}
+.lookbook-color{width:32px;height:32px;border-radius:var(--r-full);border:2px solid var(--border);cursor:pointer;transition:all var(--dur-fast) ease}
+.lookbook-color:hover,.lookbook-color.is-active{border-color:var(--accent);transform:scale(1.15)}
+.lookbook-sizes{display:flex;gap:var(--sp-2);margin-bottom:var(--sp-8)}
+.size-btn{padding:var(--sp-2) var(--sp-4);border:1px solid var(--border);font-size:var(--text-xs);font-weight:var(--w-medium);letter-spacing:var(--ls-wide);color:var(--text-3);cursor:pointer;transition:all var(--dur-fast) ease}
+.size-btn:hover,.size-btn.is-active{border-color:var(--accent);color:var(--accent)}
+.lookbook-actions{display:flex;gap:var(--sp-3);flex-wrap:wrap;margin-bottom:var(--sp-10)}
+.lookbook-spec{border-top:1px solid var(--border);padding-top:var(--sp-8)}
+.lookbook-spec table{width:100%;max-width:400px}
+.lookbook-spec td{padding:var(--sp-3) 0;font-size:var(--text-small);border-bottom:1px solid var(--border)}
+.lookbook-spec td:first-child{color:var(--text-3);width:80px;font-weight:var(--w-medium)}
+.channels-section{padding:var(--sp-12) 0;border-top:1px solid var(--border)}
+.channel-links{display:flex;gap:var(--sp-3);flex-wrap:wrap;margin-top:var(--sp-6)}
+.channel-link{padding:var(--sp-3) var(--sp-6);border:1px solid var(--border);font-size:var(--text-xs);font-weight:var(--w-medium);letter-spacing:var(--ls-wide);color:var(--text-3);transition:all var(--dur-fast) ease}
+.channel-link:hover{border-color:var(--accent);color:var(--accent)}
+@media(max-width:768px){.lookbook-hero{grid-template-columns:1fr}.lookbook-hero__visual{min-height:60vh}.lookbook-hero__info{padding:var(--sp-8) var(--gutter)}.lookbook-actions{flex-direction:column}.lookbook-actions .btn{width:100%}}
 </style>
 </head>
 <body>
-<nav>
-  <div class="brand">GO<span>H</span>SY</div>
-  <a href="../index.html">← Showroom</a>
+
+<nav class="nav" id="nav">
+  <a href="../../" class="nav__brand">GOHSY</a>
+  <div class="nav__channels">
+    <a href="../../channels/story.html" class="nav__ch" data-ch="ch1">CH1 Story</a>
+    <a href="../../channels/material.html" class="nav__ch" data-ch="ch2">CH2 Material</a>
+    <a href="../../channels/costume.html" class="nav__ch" data-ch="ch3">CH3 Costume</a>
+    <a href="../../channels/academy.html" class="nav__ch" data-ch="ch4">CH4 Academy</a>
+  </div>
+  <div class="nav__actions">
+    <a href="../" class="nav__link">Showroom</a>
+  </div>
 </nav>
-<div class="product">
-  <div class="hero-img">👖</div>
-  <span class="badge">SS2026</span>
-  <h1>와이드 핏 카고 팬츠</h1>
-  <p class="name-en">Wide Fit Cargo Pants</p>
-  <div class="price">₩39,900</div>
 
-  <div class="colors">
-    <div class="color-opt sel" style="background:#222" title="black"></div>
-    <div class="color-opt" style="background:#BDB76B" title="khaki"></div>
-    <div class="color-opt" style="background:#F5F5DC" title="beige"></div>
+<main class="lookbook-hero" data-product-id="PROD-002">
+  <div class="lookbook-hero__visual">
+    <div class="card__placeholder" style="width:100%;height:100%">
+      <span class="card__placeholder-icon" style="font-size:5rem">👖</span>
+      <span class="card__placeholder-text">Wide Fit Cargo Pants</span>
+    </div>
   </div>
-
-  <div class="sizes">
-    <button class="size-btn">S</button>
-    <button class="size-btn sel">M</button>
-    <button class="size-btn">L</button>
-    <button class="size-btn">XL</button>
+  <div class="lookbook-hero__info">
+    <span class="lookbook-hero__badge">SS2026</span>
+    <h1 class="lookbook-hero__name">와이드 핏 카고 팬츠</h1>
+    <p class="lookbook-hero__name-en">Wide Fit Cargo Pants</p>
+    <p class="lookbook-hero__desc">밀리터리 감성의 카고 포켓 디테일과 와이드 핏이 결합된 팬츠. 스트릿 무드부터 캐주얼까지 다양한 스타일링이 가능합니다.</p>
+    <div class="lookbook-hero__price">₩39,900</div>
+    <div class="lookbook-colors">
+      <button class="lookbook-color is-active" style="background:#222" title="Black"></button>
+      <button class="lookbook-color" style="background:#BDB76B" title="Khaki"></button>
+      <button class="lookbook-color" style="background:#F5F5DC" title="Beige"></button>
+    </div>
+    <div class="lookbook-sizes">
+      <button class="size-btn">S</button>
+      <button class="size-btn is-active">M</button>
+      <button class="size-btn">L</button>
+      <button class="size-btn">XL</button>
+    </div>
+    <div class="lookbook-actions">
+      <button class="btn btn--accent btn--lg"><span>구매하기</span></button>
+      <button class="btn btn--lg"><span>장바구니</span></button>
+    </div>
+    <div class="lookbook-spec">
+      <table>
+        <tr><td>소재</td><td>면 100%</td></tr>
+        <tr><td>무게</td><td>420g</td></tr>
+        <tr><td>원산지</td><td>한국</td></tr>
+        <tr><td>세탁</td><td>세탁기 가능 (찬물)</td></tr>
+      </table>
+    </div>
   </div>
+</main>
 
-  <table class="spec-table">
-    <tr><td>소재</td><td>면 100%</td></tr>
-    <tr><td>무게</td><td>420g</td></tr>
-    <tr><td>원산지</td><td>한국</td></tr>
-    <tr><td>세탁</td><td>세탁기 가능 (찬물)</td></tr>
-  </table>
-
-  <div class="channels">
-    <a class="ch-link pending" href="#">🛒 쿠팡 — 준비 중</a>
-    <a class="ch-link pending" href="#">🟢 네이버 — 준비 중</a>
-    <a class="ch-link pending" href="#">▶️ YouTube — 준비 중</a>
+<section class="channels-section">
+  <div class="container">
+    <div class="section__label">이 제품이 등장하는 채널</div>
+    <div class="channel-links">
+      <a href="../../channels/story.html#ep02" class="channel-link">CH1 Story — EP.02 거리의 리듬</a>
+      <a href="../../channels/material.html#vol02" class="channel-link">CH2 Material — Vol.02 Cotton</a>
+      <a href="../../channels/costume.html#char01" class="channel-link">CH3 Costume — 도쿄 프리랜서</a>
+    </div>
   </div>
+</section>
 
-  <div class="filming">
-    <h3>Filming Points</h3>
-    <ul>
-      <li>포켓 디테일</li>
-      <li>실루엣 측면샷</li>
-      <li>소재 텍스쳐</li>
-      <li>코디 추천</li>
-    </ul>
+<footer class="footer">
+  <div class="container">
+    <div class="footer__brand">GOHSY</div>
+    <p class="footer__tagline">Fashion TV — Wear the Story</p>
+    <div class="footer__links">
+      <a href="../" class="footer__link">Showroom</a>
+      <a href="../../" class="footer__link">Home</a>
+    </div>
+    <p class="footer__copy">&copy; 2026 GOHSY. All rights reserved.</p>
+  </div>
+</footer>
+
+<div class="page-spacer"></div>
+
+<div class="player-bar" id="playerBar">
+  <div class="player-bar__music">
+    <div class="player-bar__art">♫</div>
+    <div class="player-bar__meta">
+      <div class="player-bar__title" id="playerTitle">Take On Me</div>
+      <div class="player-bar__artist" id="playerArtist">a-ha</div>
+    </div>
+  </div>
+  <div class="player-bar__controls">
+    <button class="player-bar__btn" id="playerPrev">⏮</button>
+    <button class="player-bar__btn player-bar__btn--play" id="playerPlay">▶</button>
+    <button class="player-bar__btn" id="playerNext">⏭</button>
+  </div>
+  <div class="player-bar__product" id="playerProduct">
+    <div class="player-bar__thumb" id="playerThumb">👖</div>
+    <a href="../" class="player-bar__buy">₩39,900</a>
   </div>
 </div>
-<footer>GOHSY — PROD-002 · gohsy-fashion slot #9</footer>
+
+<script src="../../js/app.js"></script>
+<script src="../../js/scroll-reveal.js"></script>
+<script src="../../js/player-bar.js"></script>
 </body>
 </html>

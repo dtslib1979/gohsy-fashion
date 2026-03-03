@@ -1,0 +1,42 @@
+/* GOHSY Fashion TV — Animations */
+
+/* ── Scroll Reveal ── */
+.reveal{opacity:0;transform:translateY(32px);transition:opacity var(--dur-slow) var(--ease-out),transform var(--dur-slow) var(--ease-out)}
+.reveal.is-visible{opacity:1;transform:translateY(0)}
+.reveal-d1{transition-delay:100ms}.reveal-d2{transition-delay:200ms}.reveal-d3{transition-delay:300ms}.reveal-d4{transition-delay:400ms}
+.reveal--left{transform:translateX(-32px)}.reveal--left.is-visible{transform:translateX(0)}
+.reveal--right{transform:translateX(32px)}.reveal--right.is-visible{transform:translateX(0)}
+.reveal--scale{transform:scale(0.95)}.reveal--scale.is-visible{transform:scale(1)}
+.reveal--none{transform:none}.reveal--none.is-visible{transform:none}
+
+/* ── Text Reveal ── */
+.reveal-text{overflow:hidden}
+.reveal-text .line{display:block;opacity:0;transform:translateY(110%);transition:opacity var(--dur-slow) var(--ease-out),transform var(--dur-slow) var(--ease-out);transition-delay:calc(var(--i,0)*120ms)}
+.reveal-text.is-visible .line{opacity:1;transform:translateY(0)}
+
+/* ── Take On Me ── */
+.take-on-me{position:relative;overflow:hidden}
+.take-on-me__sketch{position:relative;z-index:2;filter:grayscale(0.2) contrast(1.15);transition:opacity 1.2s var(--ease-out)}
+.take-on-me__real{position:absolute;inset:0;z-index:1;opacity:0;transition:opacity 1.2s var(--ease-out)}
+.take-on-me.is-revealed .take-on-me__sketch{opacity:0}
+.take-on-me.is-revealed .take-on-me__real{opacity:1}
+
+/* ── Keyframes ── */
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes slideUp{from{transform:translateY(24px);opacity:0}to{transform:translateY(0);opacity:1}}
+@keyframes pulse{0%,100%{opacity:0.3;transform:translateY(0)}50%{opacity:1;transform:translateY(8px)}}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes shimmer{0%{background-position:-200% 0}100%{background-position:200% 0}}
+
+/* ── Loader ── */
+.loader{position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;background:var(--bg);transition:opacity 0.6s var(--ease-out)}
+.loader.is-done{opacity:0;pointer-events:none}
+.loader__brand{font-size:clamp(2rem,6vw,4rem);font-weight:var(--w-light);letter-spacing:var(--ls-widest);text-transform:uppercase;animation:fadeIn 0.8s var(--ease-out) both}
+
+/* ── Scroll Hint ── */
+.scroll-hint{position:absolute;bottom:var(--sp-8);left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:var(--sp-2);animation:pulse 2s ease-in-out infinite}
+.scroll-hint__line{width:1px;height:40px;background:linear-gradient(to bottom,transparent,var(--text-3))}
+.scroll-hint__text{font-size:var(--text-micro);letter-spacing:var(--ls-widest);text-transform:uppercase;color:var(--text-3)}
+
+/* ── Reduced Motion ── */
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:0.01ms!important;transition-duration:0.01ms!important}.reveal,.reveal-text .line{opacity:1;transform:none}.scroll-hint{animation:none}}
