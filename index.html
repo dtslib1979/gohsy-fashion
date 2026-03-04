@@ -535,7 +535,7 @@ img,svg{display:block;max-width:100%}
   function getCatIcon(cat){var main=cat.split('/')[0];return CAT_ICONS[main]||'👗'}
   function formatPrice(n){return '₩'+n.toLocaleString('ko-KR')}
 
-  fetch('catalog/index.json').then(function(r){return r.json()}).then(function(data){
+  fetch('catalog/index.json?v='+Date.now()).then(function(r){return r.json()}).then(function(data){
     var el=document.getElementById('onAirScroll');
     if(!el)return;
     var products=data.products||[];
